@@ -1,0 +1,1 @@
+run `git subtree push --prefix web origin gh-pages` at toplevel in master brnach
