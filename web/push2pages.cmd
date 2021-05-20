@@ -1,5 +1,5 @@
 @echo off
 cd..
-git checkout master
+git checkout main
 git subtree push --prefix web origin gh-pages
 pause
