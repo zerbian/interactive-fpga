@@ -2,10 +2,39 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<script type="text/javascript" src="simcir.js"></script>
+		<link rel="stylesheet" type="text/css" href="simcir.css" />
+		<script type="text/javascript" src="simcir-basicset.js"></script>
+		<link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+		<script type="text/javascript" src="simcir-library.js"></script>
 		<title>Interactive FPGA</title>
 	</head>
 	<body>
 		<main>
+			<div class="simcir">
+				{
+					"width":500,
+					"height":200,
+					"showToolbox":true,
+					"toolbox":[
+					  {"type":"DC"},
+					  {"type":"PushOff"},
+					  {"type":"RS-FF"}
+					],
+					"devices":[
+					  {"type":"DC","id":"dev0","x":104,"y":80,"label":"DC"},
+					  {"type":"PushOff","id":"dev1","x":160,"y":48,"label":"PushOff"},
+					  {"type":"PushOff","id":"dev2","x":160,"y":112,"label":"PushOff"},
+					  {"type":"RS-FF","id":"dev3","x":216,"y":80,"label":"RS-FF"}
+					],
+					"connectors":[
+					  {"from":"dev1.in0","to":"dev0.out0"},
+					  {"from":"dev2.in0","to":"dev0.out0"},
+					  {"from":"dev3.in0","to":"dev1.out0"},
+					  {"from":"dev3.in1","to":"dev2.out0"}
+					]
+				  }
+			</div>
 		</main>
 		<footer>
 			<ul>
