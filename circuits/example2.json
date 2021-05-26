@@ -1,0 +1,39 @@
+{
+  "devices": {
+    "clock_in": {
+      "type": "Button",
+      "label": "Clock"
+    },
+    "data_in": {
+      "type": "Button",
+      "label": "Data"
+    },
+    "sub2": {
+      "type": "Dff",
+      "label": "Speicher"
+    }
+  },
+  "connectors": [
+    {
+      "from": {
+        "id": "clock_in",
+        "port": "out"
+      },
+      "to": {
+        "id": "sub2",
+        "port": "clk"
+      }
+    },
+    {
+      "from": {
+        "id": "data_in",
+        "port": "out"
+      },
+      "to": {
+        "id": "sub2",
+        "port": "in"
+      }
+    }
+  ],
+  "subcircuits": {}
+}
