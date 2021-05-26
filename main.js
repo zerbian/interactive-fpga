@@ -1,41 +1,27 @@
-var json = {
-  "devices": {
-      "dev0": {
-          "type": "Button",
-          "net": "d",
-          "order": 0,
-          "bits": 1,
-          "label": "d"
-      },
-      "dev1": {
-          "type": "Button",
-          "net": "c",
-          "order": 1,
-          "bits": 1,
-          "label": "c"
-      },
-      "dev2": {
-          "type": "Lamp",
-          "net": "o",
-          "order": 2,
-          "bits": 1,
-          "label": "o"
-      },
-      "dev3": {
-          "label":"",
-          "type":"Dff",
-          "bits":1,
-          "polarity": {"clock":true}
-      }
-  },
-  "connectors": [
-      {"to":{"id":"dev3","port":"in"},"from":{"id":"dev0","port":"out"}},
-      {"to":{"id":"dev3","port":"clk"},"from":{"id":"dev1","port":"out"}},
-      {"to":{"id":"dev2","port":"in"},"from":{"id":"dev3","port":"out"}}
-  ],
-  "subcircuits": {}
+function loadJSON(filename, callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', filename, true);
+    xobj.onreadystatechange = function() {
+        if (xobj.readyState == 4 && xobj.status == "200") callback(xobj.responseText);
+    }
+    xobj.send(null);
+}
+
+function loadCircuit(id, filename) {
+    loadJSON(filename, res => {
+        var json = JSON.parse(res);
+        var cir = new digitaljs.Circuit(json);
+        var can = cir.displayOn($('#' + id));
+        cir.start();
+    });
 };
 
-const circuit1 = new digitaljs.Circuit(json);
-const paper1 = circuit1.displayOn($('#paper'));
-circuit1.start();
+var circuits = [
+    {"id":"c1", "path": "./circuits/example1.json"},
+    {"id":"c2", "path": "./circuits/example2.json"}
+]
+
+circuits.forEach(value => {
+    loadCircuit(value.id, value.path);
+})
