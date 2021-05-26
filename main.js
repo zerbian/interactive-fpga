@@ -18,10 +18,10 @@ function loadCircuit(id, filename) {
 };
 
 var circuits = [
-    {"id":"c1", "path": "./circuits/example1.json"},
-    {"id":"c2", "path": "./circuits/example2.json"}
-]
+    {"id":"c1", "path": "./circuits/example3.json"},
+    {"id":"c2", "path": "./circuits/clb.json"}
+];
 
 circuits.forEach(value => {
     loadCircuit(value.id, value.path);
-})
+});
