@@ -18,7 +18,7 @@ function loadCircuit(id, filename) {
 };
 
 var circuits = [
-    {"id":"c1", "path": "./circuits/example3.json"},
+    {"id":"c1", "path": "./circuits/broken.json"},
     {"id":"c2", "path": "./circuits/clb.json"}
 ];
 
