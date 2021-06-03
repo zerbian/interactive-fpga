@@ -3,10 +3,245 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<title>Interactive FPGA</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 	</head>
+
 	<body>
-		<main>
-		</main>
+		<div class="w3-top">
+			<div class="w3-row w3-padding w3-black">
+			
+				<div class="w3-col s2">
+					<a href="#about" class="w3-button w3-block w3-black">INTRO</a>
+			  	</div>
+
+			  	<div class="w3-col s2">
+					<a href="#was" class="w3-button w3-block w3-black">WAS IST EIN FPGA?</a>
+			  	</div>
+
+			  	<div class="w3-col s2">
+					<a href="#wie" class="w3-button w3-block w3-black">WIE?</a>
+			  	</div>
+
+			  	<div class="w3-col s2">
+					<a href="#vor-und nachteile" class="w3-button w3-block w3-black">WANN?</a>
+			  	</div>
+
+				<div class="w3-col s2">
+					<a href="#anwendung" class="w3-button w3-block w3-black">ANWENDUNG</a>
+			  	</div>
+
+				<div class="w3-col s2">
+					<a href="#modell" class="w3-button w3-block w3-black">INTERAKTIVES MODELL</a>
+			  	</div>
+			</div>
+		</div>
+		  
+		<!-- Header with image -->
+		<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+			<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+			  	<span class="w3-tag">img digitale systeme</span>
+			</div>
+
+			<div class="w3-display-middle w3-center">
+			  	<span class="w3-text-white" style="font-size:90px">the<br>Cafe</span>
+			</div>
+
+			<div class="w3-display-bottomright w3-center w3-padding-large">
+			  	<span class="w3-text-white">15 Adr street, 5015</span>
+			</div>
+		</header>
+		  
+		<!-- Add a background color and large text to the whole page -->
+		<div class="w3-sand w3-grayscale w3-large">
+		  
+			<!-- About Container -->
+			<div class="w3-container" id="about">
+				<div class="w3-content" style="max-width:700px">
+					<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">FPGA</span></h5>
+					<p>FPGAs haben heute in Hinblick auf Flexibilität und Leistung eine wichtige Rolle in Entwicklungsprozessen. Und warum dies zutrifft werdet ihr hier auf dieser Webseite erfahren.</p>
+			  
+					<p><sub>RedPitaya STEMLab FPGA</sub></p>
+					<img src="img/STEMLab_FPGA.jpg" style="width:100%;max-width:1000px" class="w3-margin-top" alt="RedPitaya STEMLab FPGA frontview">
+					<p><sup>Quelle: Wikimedia Commons</sup></p>
+			  
+					<p>Hier erwarten euch nach jedem Themenblock Selbstkontrollen in Form von Quizze, die beliebig oft bearbeitet werden können.</p>
+					<p>Nach Durchlesen und Bearbeiten soll euch</p>
+					<ul>
+						<li>der Aufbau und die einzelnen Teilelemente</li>
+						<li>und Nutzen von FPGAs in verschiedensten Applikationen </li>
+					</ul>
+					<p>bewusst sein.</p><br>
+					<p>Diese Seite dient euch zu helfen sich besser mit FPGAs vertraut zu machen und das in der Vorlesung Angesprochene besser zu verstehen, daher ist es von Vorteil sich mit Logikgatter, Array-Logikbausteine wie PLAs, PALs, PROMs usw. in den vorherigen Kapiteln beschäftigt zu haben.</p><br>
+					<h3>Inhaltsverzeichnis</h3>
+					<ul>
+						<li><a href="#was" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Was sind FPGAs?</a></li>
+						<li><a href="#wie" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Wie sind die aufgebaut?</a</li>
+						<li><a href="#funktion" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Wie genau funktionieren FPGAs?</a></li>
+						<li><a href="#realitaet" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Wie wird diese in der Realität umgesetzt?</a></li>
+						<li><a href="#vor-und nachteile" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Wann werden FPGAs bevorzugt? (Vor-und Nachteile)</a></li>
+						<li><a href="#anwendung" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Anwendungsbeispiele</a></li>
+						<li><a href="#modell" class="w3-hover-text-green" style="text-decoration: none;color: blue;">Interaktives Modell</a></li>
+					</ul>
+			  
+				</div>
+			</div>
+		  
+		<!-- Menu Container -->
+			<div class="w3-container" id="was">
+				<div class="w3-content" style="max-width:700px">
+		   
+					<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WAS IST EIN FPGA?</span></h5>
+					<p>Der Name FPGA steht für „feldprogrammierbares Gate-Array“, was bedeutet, dass dieses in einem Feld aus einer Struktur von Logikgattern programmiert wird. Wobei programmieren eher ein irreführender Begriff ist, da es um eine Hardwarebeschreibungsspache handelt, welches die Eigenschaften der Verbindungswege unter den Logikelemente neu definiert.</p>
+			
+				</div>  
+
+				<div class="w3-content" style="max-width:700px">
+					<img src="" style="width:100%;max-width:1000px;margin-top:32px;" alt="zoombar?">
+				</div>
+
+				<div class="w3-content" style="max-width:700px">
+					<p>Im Allgemeinen sind sie ein integrierter Schaltkreis der Digitaltechnik, in welche eine logische Schaltung geladen werden kann.</p>
+					<p>FPGAs haben für Entwicklern insbesondere im Hinblick auf die hohe Rechenleistung und die Flexibilität beim Design und der Leistung pro Watt eine Menge zu bieten.</p>
+					<p>Dabei ist nicht nur ein hohes Maß an Rechenleistung gefordert, sondern auch ein deterministisches Verhalten in Echtzeit.</p>
+				</div>
+		  	</div>
+		 
+			<div class="w3-container" id="wie" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px">
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE SIND FPGAS AUFGEBAUT? </span></h5>
+			  		<p>Sie basieren auf ein Logikblock-Konzept, welche aus einfachen logischen Schaltungen, die flexibel programmierbar sind bestehen. Oft werden sie deutlichkeitshalber zweidimensional oder auch dreidimensional dargestellt.</p>
+					
+					<img src="img/marix.jpeg" style="width:60%;max-width:1000px;margin-top:32px;align-self: center;" alt="FPGA Architektur">
+
+					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
+					<p>Die Schaltungen werden in Form von „Look Up Tables“ (abgekürzt LUTs) vereinfacht, womit beliebige Logikkombinationen implementiert werten. Integriert mit Multiplexer, Addierer, Clock-Eingänge, Speicherelemente(Flip-Flops) oder zusätzliche Register bilden zusammen ein Logikblock (LB).</p>
+					
+					<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
+					<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
+					<p><sup>Quelle: Wikipedia (unbekannter Author)</sup></p>
+
+					<p>LUTs bzw. Umsetzungstabellen sind Wahrheitstabellen, die vorberechnete Ergebnisse statisch definieren.</p>
+					<img src="" style="width:100%;max-width:1000px" class="w3-margin-top" alt="LUT Beispiele">
+					<p>Ein FPGA kann ca. 500 bis 500000 LBs beinhalten, die je nach Wahl und erwünsche Funktion beliebig untereinander durch die In-und Outputs einzelner LBs verschaltet werden, diese können entweder dauerhaft oder reversible sein. Somit sind multiple verschiedene Schaltungen realisierbar. </p>
+					
+				</div>
+			</div>
+
+			<div class="gal">
+				<div class="gallery">
+					<img src="img/konfigurierbarer LB Xilinx.jpeg" alt="Beispiel Xilinx Logikblock">
+					<div class="desc">Add a description of the image here</div>
+				</div>
+
+				<div class="gallery">
+					<img src="img/LB kombinatorisch.jpeg" alt="kombinatorischer LB">
+					<div class="desc">Add a description of the image here</div>
+				</div>
+
+				<div class="gallery">
+					<img src="img/LB kombinatorisch02.jpeg" alt="kombinatorischer LB 02">
+					<div class="desc">Add a description of the image here</div>
+				</div>
+			</div>		
+				
+
+		<div class="w3-sand w3-grayscale w3-large"></div>
+			
+			<div class="w3-container" id="funktion" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px">
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE GENAU FUNKTIONIEREN FPGAS?</span></h5>
+			  		<p>An sich hat ein neues, unkonfiguriertes FPGA keine Funktion, diese muss zuerst durch den Anwender entworfen werden.<br>
+						Es gibt zwei verschiedene Arten von FPGAs, reversible und irreversible, wie der Name schon sagt, handelt es sich beim Erstere um eine immer wieder neu charakterisierbare Schaltung welche in eine Speicherzelle geladen wird.
+						Letztere verwendet Antifuses wodurch die Verbindungen unter die LBs auf Dauer festgelegt werden. Vorteil davon ist das Ausfallen der Wartezeit, um die benötigten Daten von der Speicherzelle bei jedem Neustart zu laden.<br>
+						Um diese Schaltungen zu konstruieren, wird hier eine Hardwarebeschreibungssprache verwendet, die die Bausteine und einzelne Bestandteile des FPGAs logisch miteinander verbindet. Dies erfolgt entweder graphisch oder per Editor.<br>
+						Wie bekannte Softwareprogrammiersprachen (Java, C) muss auch ein FPGA durch Tests oder Simulationen gedebuggt werden.
+					</p>
+
+				</div>
+			</div>
+
+			<div class="w3-container" id="realitaet" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px">
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE WERDEN FPGAS IN DER REALITÄT UMGESETZT?</span></h5>
+			  		<p>Ein FPGA kommt meist zusammen mit einem Development Board, welches schon die wichtigsten Features und Bauelemente beinhaltet. Beliebte Features für ein Beginners FPGA-Boards sind z.B. USB Interface, Segment LED Display, Speicherzellen, Push Buttons.</p>
+					<p>Weitere Beispiele mit Funktionen können hier gefunden werden: <a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide/#post-764-_Toc14450819" target="_blank" class="w3-hover-text-green">fraserinnovations.com</a></p>
+					<img alt="das blaue FPGA">
+					<p>Die Neukonfiguration der Verbindungen zwischen den LBs muss jedes Mal vor Benutzung des FPGAs wieder geladen werden, was meist einige Sekunden dauert. Diese Konfigurationsinformationen werden in Speicherzellen (EPROM, EEPROM, SRAM) außerhalb der mehrmals programmierbaren FPGA gespeichert, was die konkrete Funktion dieser beschreibt. Die Verbindungen bleiben so lange aktiv bis das FPGA abgeschaltet ist.</p>
+					
+					<p><sub>8-bit Microcomputer with EPROM (piggyback)</sub></p>
+					<img src="img/800px-Microcomputer_with_EPROM_(piggyback).jpg" style="width:50%;max-width:1000px;" alt="Microcomputer with EPROM">
+					<p><sup>Quelle: Wikimedia Commons</sup></p>
+
+					<p>Um die Verbindungsstrukturen zu beschreiben werden bestimmte Hardwarebeschreibungsspachen HDLs (Hardware Description Language) wie z.B. Verilog oder VHDL verwendet. Oft genutzte Strukturen und Codes werden von Herstellen für die Benutzer zur Verfügung gestellt, welche einfach eingebaut werden können. Auch werden immer häufiger Tools bereitgestellt die in einer höheren Programmiersprache wie C oder C++ programmiert wurden, was einen Einstieg für Entwicklern erleichtert.</p>
+					
+					<p><sub>VHDL source code for a signed adder</sub></p>
+					<img src="img/Vhdl_signed_adder.png" alt="Codeausschnitt eines Addierers">
+					<p><sup>Quelle: Wikimedia Commons</sup></p>
+
+					<p>Eine Website die einige Beispiele in VHDL anbietet ist <a href="https://www.mikrocontroller.net/articles/VHDL_Softwarepool" target="_blank" class="w3-hover-text-green">mikrocontroller.net</a>.</p>
+				</div>
+			</div>
+		  
+			<div class="w3-container" id="vor-und nachteile">
+				<div class="w3-content" style="max-width:700px">
+		   
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">VOR-UND NACHTEILE</span></h5>
+
+		  			<div class="w3-row w3-center w3-card w3-padding">
+						<a href="javascript:void(0)" onclick="openMenu(event, 'Vorteile');" id="myLink">
+			  				<div class="w3-col s6 tablink">Vorteile</div>
+						</a>
+
+						<a href="javascript:void(0)" onclick="openMenu(event, 'Nachteile');">
+			  				<div class="w3-col s6 tablink">Nachteile</div>
+						</a>
+		  			</div>
+	  
+		  			<div id="Vorteile" class="w3-container menu w3-padding-48 w3-card">
+						<ul>
+							<li>Ein FPGA ist eine sehr flexible Schaltung, bei jedem Powerup kann eine neue Konfiguration geladen und getestet werden, somit auch spezielle Algorithmen implementierbar</li><br>
+							<li>Im Gegensatz zu ASIC hat ein FPGA deutlich geringere Entwicklungskosten (als Massenproduktion)</li><br>
+							<li>Immer wieder neu konfigurierbar</li><br>
+							<li>Parallele Verarbeitung von Prozessoren sorgt für eine schnelle Verarbeitung (MC arbeitet sequenziell)</li><br>
+							<li>Beliebige Ein-und Ausgänge zum Verschalten von LBs </li><br>
+							<li>Intel FPGAs haben eine lange Lebensdauer (ca. 15 Jahre)</li>
+						</ul>
+		  			</div>
+	  
+		  			<div id="Nachteile" class="w3-container menu w3-padding-48 w3-card">
+						<ul>
+							<li>Hoher Stromverbrauch</li><br>
+							<li>Geringe Taktzeit (aktuell bis 1,5 GHz, ASIC/MC bei < 3 GHz)</li><br>
+							<li>Geringere Logikdichte, benötigt eine große Chipfläche</li><br>
+							<li>Braucht einen Speicher zur Konfiguration, welche bei jeder Spannungsunterbrechung neu geladen werden muss</li><br>
+							<li>Kompliziert zu implementieren (HDL ist keine einfache Beschreibungssprache und schwer zu erlernen)</li><br>
+							<li>Viele komplexe Bausteine zur Umsetzung</li>
+						</ul>
+		  			</div>  
+				</div>
+	  		</div>
+
+			<div class="w3-container" id="anwendung" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px">
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">ANWENDUNGSGEBIETE</span></h5>
+					<p>Während FPGAs früher hauptsächlich als so genannte "Glue-Logic" (auch: Verbindungslogik, zur Verbindung von zwei logischen Schaltungen) dienten, finden sie heute in vielen weiteren Gebieten Verwendung. Sei es in Echtzeit Verarbeitungen (von einfachen bis zu komplexen Algorithmen) oder Digitalen Filtern. Selbst zur Ausführung von schnellen Fourier Transformationen werden sie herangezogen. FPGAs werden auch in Parallelcomputern verbaut wobei auch sogenannte FPGA-Rechner existieren die zur Berechnung von Kryptografischer Verfahren dienen.</p>
+					<p>Im Ganzen finden sie vor allem also Gebrauch in den Bereichen der Digitaltechnik und dort, wo es vor allem auf schnelle Signalverarbeitung  und flexible Änderung der Schaltungen ankommt.</p>
+				</div>
+			</div>
+
+
+			<div class="w3-container" id="modell" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px">
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">INTERAKTIVES MODELL</span></h5>
+				</div>
+			</div>
+
+			<!-- End page content -->
+		</div>
+	
 		<footer>
 			<ul>
 				<li><a href="index.html">Hauptseite</a></li>
@@ -14,5 +249,62 @@
 				<li><a href="https://github.com/zerbian/interactive-fpga">GitHub</a></li>
 			</ul>
 		</footer>
+		<!-- Footer -->
+		<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  		</footer>
+
+		<script>
+			// Tabbed Menu
+			function openMenu(evt, menuName) {
+			  var i, x, tablinks;
+			  x = document.getElementsByClassName("menu");
+			  for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			  }
+			  tablinks = document.getElementsByClassName("tablink");
+			  for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+			  }
+			  document.getElementById(menuName).style.display = "block";
+			  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+			}
+			document.getElementById("myLink").click();
+		</script>
+
+		<style>
+			body, html {
+			  	height: 100%;
+			  	font-family: "Inconsolata", sans-serif;
+			}
+
+			sup, sub{
+				color: gray;
+			}
+			
+
+			.bgimg {
+			  	background-position: center;
+			  	background-size: cover;
+			  	background-image: url("/w3images/coffeehouse.jpg");
+			  	min-height: 75%;
+			}
+
+			div.gallery {
+  				margin: 1.5%;
+  				float: left; 
+  				width: 30%;
+			}
+
+			div.gallery img {
+  				width: 100%;
+  				height: auto;
+			}
+			
+			.menu {
+			  	display: none;
+			}
+			</style>
+
 	</body>
 </html>
