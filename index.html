@@ -124,27 +124,90 @@
 					<p><sup>Quelle: Wikipedia (unbekannter Author)</sup></p>
 
 					<p>LUTs bzw. Umsetzungstabellen sind Wahrheitstabellen, die vorberechnete Ergebnisse statisch definieren.</p>
-					<img src="" style="width:100%;max-width:1000px" class="w3-margin-top" alt="LUT Beispiele">
+					<div>
+						<table style="width: 45%;float: left;margin-left: 10px;">
+							<caption>XOR</caption>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>Y</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+							</tr>
+
+						</table>
+
+						<table style="width: 45%;float: right;margin-right: 10px;">
+							<caption>NOR</caption>
+							<tr>
+								<th>A</th>
+								<th>B</th>
+								<th>Y</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>0</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+							</tr>
+
+						</table>
+					</div>
+					<p><sub>Logiktabellen für XOR und NOR</sub></p>
 					<p>Ein FPGA kann ca. 500 bis 500000 LBs beinhalten, die je nach Wahl und erwünsche Funktion beliebig untereinander durch die In-und Outputs einzelner LBs verschaltet werden, diese können entweder dauerhaft oder reversible sein. Somit sind multiple verschiedene Schaltungen realisierbar. </p>
 					
 				</div>
 			</div>
 
-			<div class="gal">
+			<div class="gal" style="align-content: center;">
 				<div class="gallery">
 					<img src="img/konfigurierbarer LB Xilinx.jpeg" alt="Beispiel Xilinx Logikblock">
-					<div class="desc">Add a description of the image here</div>
+					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
+					<!--<div class="desc">Add a description of the image here</div>-->
 				</div>
 
 				<div class="gallery">
 					<img src="img/LB kombinatorisch.jpeg" alt="kombinatorischer LB">
-					<div class="desc">Add a description of the image here</div>
+					<!--<div class="desc">Add a description of the image here</div>-->
 				</div>
-
+				<!--
 				<div class="gallery">
 					<img src="img/LB kombinatorisch02.jpeg" alt="kombinatorischer LB 02">
 					<div class="desc">Add a description of the image here</div>
 				</div>
+				-->
 			</div>		
 				
 
@@ -168,7 +231,10 @@
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE WERDEN FPGAS IN DER REALITÄT UMGESETZT?</span></h5>
 			  		<p>Ein FPGA kommt meist zusammen mit einem Development Board, welches schon die wichtigsten Features und Bauelemente beinhaltet. Beliebte Features für ein Beginners FPGA-Boards sind z.B. USB Interface, Segment LED Display, Speicherzellen, Push Buttons.</p>
 					<p>Weitere Beispiele mit Funktionen können hier gefunden werden: <a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide/#post-764-_Toc14450819" target="_blank" class="w3-hover-text-green">fraserinnovations.com</a></p>
-					<img alt="das blaue FPGA">
+					<p><sub>PRA006/010 Development Board</sub></p>
+					<img src="img/blueFPGA.png" alt="PRA006/010 Development Board" style="width:90%;max-width:1000px">
+					<p><sup>Quelle: https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide/#post-764-_Toc14450819</sup></p>
+
 					<p>Die Neukonfiguration der Verbindungen zwischen den LBs muss jedes Mal vor Benutzung des FPGAs wieder geladen werden, was meist einige Sekunden dauert. Diese Konfigurationsinformationen werden in Speicherzellen (EPROM, EEPROM, SRAM) außerhalb der mehrmals programmierbaren FPGA gespeichert, was die konkrete Funktion dieser beschreibt. Die Verbindungen bleiben so lange aktiv bis das FPGA abgeschaltet ist.</p>
 					
 					<p><sub>8-bit Microcomputer with EPROM (piggyback)</sub></p>
@@ -286,14 +352,15 @@
 			.bgimg {
 			  	background-position: center;
 			  	background-size: cover;
-			  	background-image: url("/w3images/coffeehouse.jpg");
+			  	background-image: url("/w3images/coffeehouse.jpg"); /*bild von gattern?? binary?*/
 			  	min-height: 75%;
 			}
 
 			div.gallery {
-  				margin: 1.5%;
-  				float: left; 
-  				width: 30%;
+  				margin-left: 5%;
+				float: left;
+  				align-self: center;
+  				width: 40%;
 			}
 
 			div.gallery img {
@@ -303,6 +370,18 @@
 			
 			.menu {
 			  	display: none;
+			}
+
+			td {
+				text-align: center;
+				
+			}
+			table, th, td{
+				border: 1px solid gray;
+				border-collapse: collapse;
+			}
+			th {
+				background-color: rgb(174, 187, 211);
 			}
 			</style>
 
