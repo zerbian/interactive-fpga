@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Interactive FPGA Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+</head>
+
+<body>
+    
+    <div class="quiz-container">
+        <div id="quiz"></div>
+    </div><br>
+    <div id="questionNumber"></div>
+    <button id="previous" class="w3-hover-text-gray">vorherige Frage</button>
+    <button id="next" class="w3-hover-text-gray">nächste Frage</button><br>
+    <button id="submit" class="w3-hover-text-white" style="background-color: rgb(248, 80, 80);">Submit</button>
+    <div id="results"></div><br>
+    <div><a href="index.html#quiz">Zurück zur Webseite</a><br></div>
+
+    <script>
+        // Functions
+        function buildQuiz() {
+            // variable to store the HTML output
+            const output = [];
+
+            // for each question...
+            myQuestions.forEach(
+                (currentQuestion, questionNumber) => {
+
+                    // variable to store the list of possible answers
+                    const answers = [];
+
+                    // and for each available answer...
+                    for (letter in currentQuestion.answers) {
+
+                        // ...add an HTML radio button
+                        answers.push(
+                            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+                        );
+                    }
+
+                    // add this question and its answers to the output
+                    output.push(
+                        `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
+                    );
+                }
+            );
+
+            // finally combine our output list into one string of HTML and put it on the page
+            quizContainer.innerHTML = output.join('');
+        }
+
+        function showResults() {
+
+            // gather answer containers from our quiz
+            const answerContainers = quizContainer.querySelectorAll('.answers');
+
+            // keep track of user's answers
+            let numCorrect = 0;
+
+            // for each question...
+            myQuestions.forEach((currentQuestion, questionNumber) => {
+
+                // find selected answer
+                const answerContainer = answerContainers[questionNumber];
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                // if answer is correct
+                if (userAnswer === currentQuestion.correctAnswer) {
+                    // add to the number of correct answers
+                    numCorrect++;
+
+                    // color the answers green
+                    answerContainers[questionNumber].style.color = 'lightgreen';
+                }
+                // if answer is wrong or blank
+                else {
+                    // color the answers red
+                    answerContainers[questionNumber].style.color = 'red';
+                }
+            });
+
+            // show number of correct answers out of total
+            resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+        }
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active-slide');
+            slides[n].classList.add('active-slide');
+            currentSlide = n;
+            if (currentSlide === 0) {
+                previousButton.style.display = 'none';
+            }
+            else {
+                previousButton.style.display = 'inline-block';
+            }
+            if (currentSlide === slides.length - 1) {
+                nextButton.style.display = 'none';
+                submitButton.style.display = 'inline-block';
+            }
+            else {
+                nextButton.style.display = 'inline-block';
+                submitButton.style.display = 'inline-block';
+            }
+
+            questionNr.innerHTML = `Frage ${n + 1} von ${myQuestions.length}`
+        }
+
+        function showNextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function showPreviousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Variables
+        const questionNr = document.getElementById('questionNumber')
+        const quizContainer = document.getElementById('quiz');
+        const resultsContainer = document.getElementById('results');
+        const submitButton = document.getElementById('submit');
+        const myQuestions = [
+            {
+                question: "Was gehört zu den Hardwarebeschreibungssprachen?",
+                answers: {
+                    a: "VHDL, ISP, Verilog, KARL, ABEL",
+                    b: "Verilog, C, Cuda, BASIC, COBOL",
+                    c: "COBOL, Cuda, VHDL, MIPS, HDL",
+                    d: "Verilog, ABEL, R, FORTH, DIWA"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "Aus was können Logikblöcke bestehen?",
+                answers: {
+                    a: "PMOS, NMOS, CMOS",
+                    b: "EPROM, SRAM, EEPROM",
+                    c: "FlipFlops, LUTs, Multiplexer",
+                    d: "Halbleiterbauelemente, Logikgatter, D-Latches"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Wofür steht \"FPGA\"?",
+                answers: {
+                    a: "Fake Programmable Gate Array",
+                    b: "Field Possible Gate Array",
+                    c: "Field Programmable Gate Array",
+                    d: "Field Programmable Gave Array"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Um Konfigurationsbits zu speichern werden SRAM-Zellen verwendet.",
+                answers: {
+                    a: "wahr",
+                    b: "falsch",
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "Was sind Bestandteile eines Multiplexers?",
+                answers: {
+                    a: "MUX, PALs, Eingänge, Ausgänge",
+                    b: "EPROMs, Steuersignale, MUX, CMOS",
+                    c: "PLAs, AND, OR, PALs",
+                    d: "Eingänge, Ausgänge, Steuersignale, Logikgatter"
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "Warum ist die Verarbeitung von FPGAs schneller als ein Microchip?",
+                answers: {
+                    a: "Die elektrische Leitfähigkeit der Halbleiter bei FPGAs ist schneller.",
+                    b: "Die Informationen können bei FPGAs parallel verarbeitet werden.",
+                    c: "FPGAs haben eine vergleichsweise hohe Taktzeit.",
+                    d: "Die sequentielle Abarbeitung von Informationen erhöht die Geschwindingkeit der Verarbeitung."
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "Welche Firma erstellte den ersten FPGA?",
+                answers: {
+                    a: "Altera/Intel PSG",
+                    b: "Xilinx",
+                    c: "Lattice",
+                    d: "Actel"
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "Was sind Anwendungsgebiete von FPGAs?",
+                answers: {
+                    a: "Speicher, Mikroprozessoren, Arithmetische Schaltwerke, Inputs/Outputs.",
+                    b: "Ein ASIC Ersatz.",
+                    c: "Ein Logik-Element in Altera und ein konfigurierbares Logikblock in Xilinx.",
+                    d: "Prototyping, Simulationen und Verifikation."
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "Hardwarebeschreibungssprachen werden heutzutage oft in C/C++ beschrieben.",
+                answers: {
+                    a: "wahr",
+                    b: "falsch",
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "Speicherbasierte Logikelemente werden auch als \"Funktionsgenerator\" bezeichnet.",
+                answers: {
+                    a: "wahr",
+                    b: "falsch",
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "Wie oft kann ein FPGA neu programmiert werden?",
+                answers: {
+                    a: "Beliebig oft.",
+                    b: "FPGAs sind irreversible.",
+                    c: "Durch die Umprogrammierung der Datenstruktur kann die Anzahl erhöht werden.",
+                    d: "Nur reversible können wiederholt neu programmiert werden."
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "Wo werden FPGAs eingesetzt?",
+                answers: {
+                    a: "Als ASIC Ersatz, kürzere time-to-market Vorteile, flexibel und wiederprogrammierbar",
+                    b: "Speicher, Mikroprozessoren, Arithmetische Schaltwerke, Inputs/Outputs",
+                    c: "High-performance Computing, Hardware Verschnellerung, Broadcast",
+                    d: "Prototyping, Simulation und Verifikation"
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "Ein \"Programmable SRAM-based FPGA\" verwendet einen externen Speicher um eine SRAM Konfiguration innerhalb des FPGAs zu programmieren.",
+                answers: {
+                    a: "wahr",
+                    b: "falsch"
+                },
+                correctAnswer: "a"
+            },
+            
+            {
+                question: "Was verbindet die Signale zwischen den FPGA-Zellen?",
+                answers: {
+                    a: "Placement",
+                    b: "n-LUT",
+                    c: "Routing"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Warum wird eine Speicherzelle benötigt?",
+                answers: {
+                    a: "Die Speicherzellen werden benötigt um Signalwerte für den nächsten Takt zu speichern.",
+                    b: "Dadurch werden die Eigenschaften der Verbindungswege zwischen den Logikblöcken permanent geändert.",
+                    c: "FPGAs verlieren ihre Funktion beim Abschalten der Betriebsspannung.",
+                    d: "Es werden keine Speicherzellen bei FPGAs benötigt."
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Aus was können LUTs bestehen?",
+                answers: {
+                    a: "AND/NOR/XNOR",
+                    b: "FlipFlops/Latches/NOR",
+                    c: "D-Latches/Multiplexer/LBs",
+                    d: "clk/MC/NAND/OR"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "Was sind die Vorteile von FPGAs?",
+                answers: {
+                    a: "Als ASIC Ersatz verwendbar, kürzere time-to-market Vorteile, flexibel und wiederprogrammierbar",
+                    b: "Einsetzbar als Logikelement in Altera und als konfigurierbares Logikelement in Xilinx.",
+                    c: "Es werden nicht alle Verdrahtungen werden genutzt, somit verwendet ein FPGA eine geringere Kapazität und Chipfläche.",
+                    d: "Niedriger Stromverbrauch."
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "\"Distibuted RAMs\" werden typischerweise für kleine RAMs/ROMs verwendet.",
+                answers: {
+                    a: "wahr",
+                    b: "falsch"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "In welchen weiteren Anwendungsbereichen werden FPGAs eingesetzt?",
+                answers: {
+                    a: "Interfaces, Logik Analyzer, Entwicklung von EPROMs, MCs",
+                    b: "High-Performance Computing, Controller, Berechnung von Kryptografischer Verfahren, Digital Technik",
+                    c: "Speicherzellen, Synchronzähler, FPAAs, Assembler",
+                    d: "Elektronik, Security Anwendungen, Kommunikation, Flash-Speicher"
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "Was sind Bestandteile eines Development Boards?",
+                answers: {
+                    a: "Schaltmatrix, Logikblöcken, Taktgeneratoren, Hard-Cores",
+                    b: "RAM, CPLDs, I/O-Blocks, Verdrahtungen",
+                    c: "USB Interface, FPGA, Segment Display, EEPROM",
+                    d: "CMOS, Push Buttons, Antifuse-Technology, 1-Bit-Register"
+                },
+                correctAnswer: "c"
+            }
+            
+        ];
+
+        // Kick things off
+        buildQuiz();
+
+        // Pagination
+        const previousButton = document.getElementById("previous");
+        const nextButton = document.getElementById("next");
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+
+        // Show the first slide
+        showSlide(currentSlide);
+
+        // Event listeners
+        submitButton.addEventListener('click', showResults);
+        previousButton.addEventListener("click", showPreviousSlide);
+        nextButton.addEventListener("click", showNextSlide);
+    </script>
+
+    <style>
+        body,
+        html {
+            text-align: center;
+            height: 100%;
+            font-family: "Inconsolata", sans-serif;
+        }
+
+        .answers {
+            font-size: 20px;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .answers label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .question{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .slide {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .active-slide {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .quiz-container {
+            position: relative;
+            height: 200px;
+            margin-top: 40px;
+        }
+    </style>
+
+</body>
+
+</html>
