@@ -2,22 +2,115 @@
     "devices": {
         "lut": {
             "type": "Subcircuit",
-            "celltype": "3LUT2"
+            "celltype": "3LUT2",
+            "label": "LUT",
+            "position":{"x":200,"y":0}
         }, 
         "flipflop": {
             "label":"",
             "type":"Dff",
             "bits":1,
-            "polarity": {"clock":true}
+            "polarity": {"clock":true},
+            "position":{"x":300,"y":70}
         },
         "inMux": {
-            "type": "Mux"
+            "type": "Mux",
+            "position":{"x":100,"y":70}
         },
         "outMux": {
-            "type": "Mux"
+            "type": "Mux",
+            "position":{"x":420,"y":50}
+        },
+        "inA": {
+            "type": "Button",
+            "label": "A",
+            "position":{"x":0,"y":-50}
+        },
+        "inB": {
+            "type": "Button",
+            "label": "B",
+            "position":{"x":0,"y":0}
+        },
+        "inC": {
+            "type": "Button",
+            "label": "C",
+            "position":{"x":0,"y":50}
+        },
+        "clk": {
+            "type": "Clock",
+            "label": "Clock",
+            "position":{"x":200,"y":150}
+        },
+        "outX": {
+            "type": "Lamp",
+            "position":{"x":500,"y":-50}
+        },
+        "outY": {
+            "type": "Lamp",
+            "position":{"x":500,"y":-0}
+        },
+        "inMuxConf": {
+            "type": "Button",
+            "position":{"x":30,"y":150}
+        },
+        "outMuxConf": {
+            "type": "Button",
+            "position":{"x":350,"y":150}
         }
     },
     "connectors": [
+        {
+            "from": {"id": "inA","port": "out"},
+            "to": {"id": "lut","port": "A"}
+        },
+        {
+            "from": {"id": "inB","port": "out"},
+            "to": {"id": "lut","port": "B"}
+        },
+        {
+            "from": {"id": "inC","port": "out"},
+            "to": {"id": "inMux","port": "in0"}
+        },
+        {
+            "from": {"id": "inMux","port":"out"},
+            "to": {"id": "lut","port": "C"}
+        },
+        {
+            "from": {"id": "lut","port":"X"},
+            "to": {"id": "outX","port": "in"}
+        },
+        {
+            "from": {"id": "lut","port":"Y"},
+            "to": {"id": "flipflop","port": "in"}
+        },
+        {
+            "from": {"id": "lut","port":"Y"},
+            "to": {"id": "outMux","port": "in0"}
+        },
+        {
+            "from": {"id": "flipflop","port":"out"},
+            "to": {"id": "outMux","port": "in1"}
+        },
+        {
+            "from": {"id": "outMux","port":"out"},
+            "to": {"id": "outY","port": "in"}
+        },
+        {
+            "from": {"id": "flipflop","port":"out"},
+            "to": {"id": "inMux","port": "in1"}
+        },
+        {
+            "from": {"id": "inMuxConf","port":"out"},
+            "to": {"id": "inMux","port": "sel"}
+        },
+        {
+            "from": {"id": "outMuxConf","port":"out"},
+            "to": {"id": "outMux","port": "sel"}
+        },
+        {
+            "from": {"id": "clk","port":"out"},
+            "to": {"id": "flipflop","port": "clk"}
+        }
     ],
     "subcircuits": {
         "3LUT2": {
