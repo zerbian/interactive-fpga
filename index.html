@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<script type="text/javascript" src="https://tilk.github.io/digitaljs/main.js"></script>
 		<title>Interactive FPGA</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,9 +121,13 @@
 					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
 					<p>Die Schaltungen werden in Form von „Look Up Tables“ (abgekürzt LUTs) vereinfacht, womit beliebige Logikkombinationen implementiert werten. Integriert mit Multiplexer, Addierer, Clock-Eingänge, Speicherelemente(Flip-Flops) oder zusätzliche Register bilden zusammen ein Logikblock (LB).</p>
 					
-					<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
-					<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
-					<p><sup>Quelle: Wikipedia (unbekannter Author)</sup></p>
+					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes.</p>
+					<div id="c1"></div>
+					<!--
+						<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
+						<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
+						<p><sup>Quelle: Wikipedia (unbekannter Author)</sup></p>
+					-->
 
 					<p>LUTs bzw. Umsetzungstabellen sind Wahrheitstabellen, die vorberechnete Ergebnisse statisch definieren.</p>
 					<div>
@@ -400,5 +405,6 @@
 			}
 			</style>
 
+	<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
