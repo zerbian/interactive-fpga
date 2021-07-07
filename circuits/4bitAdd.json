@@ -10,36 +10,39 @@
             "type": "Subcircuit",
             "celltype": "clb",
             "label": "LB",
-            "position": {"x":200,"y":100}
+            "position": {"x":200,"y":110}
         },
         "clb2": {
             "type": "Subcircuit",
             "celltype": "clb",
             "label": "LB",
-            "position": {"x":200,"y":200}
+            "position": {"x":200,"y":220}
         },
         "clb3": {
             "type": "Subcircuit",
             "celltype": "clb",
             "label": "LB",
-            "position": {"x":200,"y":300}
+            "position": {"x":200,"y":330}
         },
         "num1": {
             "type": "NumEntry",
             "label": "A",
             "bits": 4,
+            "numbase": "dec",
             "position": {"x":-50,"y":100}
         },
         "num2": {
             "type": "NumEntry",
             "label": "B",
             "bits": 4,
+            "numbase": "dec",
             "position": {"x":-50,"y":200}
         },
         "outNum": {
             "type": "NumDisplay",
             "label": "sum",
             "bits": 4,
+            "numbase": "dec",
             "position": {"x":380,"y":200}
         },
         "split1": {
