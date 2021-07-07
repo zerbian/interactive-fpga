@@ -27,7 +27,8 @@ function loadCircuit(id, filename) {
 };
 
 var circuits = [
-    {"id":"c1", "path": "./circuits/clb.json"}
+    //{"id":"c1", "path": "./circuits/clb.json"},
+    {"id":"c2", "path": "./circuits/4bitAdd.json"}
 ];
 
 circuits.forEach(value => {
