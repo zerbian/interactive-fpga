@@ -1,0 +1,255 @@
+{
+    "devices": {
+        "clb0": {
+            "type": "Subcircuit",
+            "celltype": "clb",
+            "label": "LB"
+        },
+        "bA": {
+            "type": "Button",
+            "label": "data_in"
+        },
+        "bB": {
+            "type": "Button",
+            "label": "write"
+        },
+        "clock": {
+            "type": "Button",
+            "label": "clock"
+        },
+        "outA": {
+            "type": "Lamp",
+            "label": "change"
+        },
+        "outB": {
+            "type": "Lamp",
+            "label": "data_out"
+        }
+    },
+    "connectors": [
+        {
+            "from": {"id": "bA", "port": "out"},
+            "to": {"id": "clb0", "port": "A"}
+        },
+        {
+            "from": {"id": "bB", "port": "out"},
+            "to": {"id": "clb0", "port": "B"}
+        },
+        {
+            "from": {"id": "clock", "port": "out"},
+            "to": {"id": "clb0", "port": "clk"}
+        },
+        {
+            "from": {"id": "clb0", "port": "X"},
+            "to": {"id": "outA", "port": "in"}
+        },
+        {
+            "from": {"id": "clb0", "port": "Y"},
+            "to": {"id": "outB", "port": "in"}
+        }
+    ],
+    "subcircuits": {
+        "3LUT2": {
+            "devices": {
+                "mem": {
+                    "type": "Memory",
+                    "bits": 2,
+                    "abits": 3,
+                    "words": 8,
+                    "offset": 0,
+                    "rdports": [
+                        {}
+                    ],
+                    "wrports": [],
+                    "memdata": [
+                        "00",
+                        "00",
+                        "00",
+                        "11",
+                        "10",
+                        "10",
+                        "01",
+                        "01"                        
+                    ]
+                },
+                "inA": {
+                    "type": "Input", "net": "A"
+                },
+                "inB": {
+                    "type": "Input","net": "B"
+                },
+                "inC": {
+                    "type": "Input","net": "C"
+                },
+                "split0": {
+                    "type": "BusGroup",
+                    "groups": [1,1,1]
+                },
+                "split1": {
+                    "type": "BusUngroup",
+                    "groups": [1,1]
+                },
+                "outX": {
+                    "type": "Output", "net": "X"
+                },
+                "outY": {
+                    "type": "Output", "net": "Y"
+                }
+            },
+            "connectors": [
+                {
+                    "from": {"id": "inA", "port": "out"},
+                    "to": {"id": "split0", "port": "in0"}
+                },
+                {
+                    "from": {"id": "inB", "port": "out"},
+                    "to": {"id": "split0", "port": "in1"}
+                },
+                {
+                    "from": {"id": "inC", "port": "out"},
+                    "to": {"id": "split0", "port": "in2"}
+                },
+                {
+                    "from": {"id": "split0", "port": "out"},
+                    "to": {"id": "mem", "port": "rd0addr"}
+                },
+                {
+                    "from": {"id": "mem", "port": "rd0data"},
+                    "to": {"id": "split1", "port": "in"}
+                },
+                {
+                    "from": {"id": "split1", "port": "out0"},
+                    "to": {"id": "outX", "port": "in"}
+                },
+                {
+                    "from": {"id": "split1", "port": "out1"},
+                    "to": {"id": "outY", "port": "in"}
+                }
+            ]
+        },
+        "clb": {
+            "devices": {
+                "lut": {
+                    "type": "Subcircuit",
+                    "celltype": "3LUT2",
+                    "label": "LUT",
+                    "position":{"x":200,"y":0}
+                },
+                "flipflop": {
+                    "type": "Dff",
+                    "bits": 1,
+                    "polarity": {"clock":true},
+                    "initial":0,
+                    "position":{"x":300,"y":70}
+                },
+                "inMux": {
+                    "type": "Mux",
+                    "position":{"x":100,"y":70}
+                },
+                "outMux": {
+                    "type": "Mux",
+                    "position":{"x":420,"y":50}
+                },
+                "inA": {
+                    "type": "Input",
+                    "label": "A",
+                    "net": "A",
+                    "position":{"x":0,"y":-50}
+                },
+                "inB": {
+                    "type": "Input",
+                    "label": "B",
+                    "net": "B",
+                    "position":{"x":0,"y":0}
+                },
+                "inC": {
+                    "type": "Input",
+                    "label": "C",
+                    "net": "C",
+                    "position":{"x":0,"y":50}
+                },
+                "clk": {
+                    "type": "Input",
+                    "label": "clk",
+                    "net": "clk",
+                    "position":{"x":200,"y":150}
+                },
+                "outX": {
+                    "type": "Output",
+                    "net": "X",
+                    "position":{"x":500,"y":-50}
+                },
+                "outY": {
+                    "type": "Output",
+                    "net": "Y",
+                    "position":{"x":500,"y":-0}
+                },
+                "inMuxConf": {
+                    "type": "Constant",
+                    "constant": "1",
+                    "position":{"x":30,"y":150}
+                },
+                "outMuxConf": {
+                    "type": "Constant",
+                    "constant": "1",
+                    "position":{"x":350,"y":150}
+                }
+
+            },
+            "connectors": [
+                {
+                    "from": {"id": "inA","port": "out"},
+                    "to": {"id": "lut","port": "A"}
+                },
+                {
+                    "from": {"id": "inB","port": "out"},
+                    "to": {"id": "lut","port": "B"}
+                },
+                {
+                    "from": {"id": "inC","port": "out"},
+                    "to": {"id": "inMux","port": "in0"}
+                },
+                {
+                    "from": {"id": "inMux","port":"out"},
+                    "to": {"id": "lut","port": "C"}
+                },
+                {
+                    "from": {"id": "lut","port":"X"},
+                    "to": {"id": "outX","port": "in"}
+                },
+                {
+                    "from": {"id": "lut","port":"Y"},
+                    "to": {"id": "flipflop","port": "in"}
+                },
+                {
+                    "from": {"id": "lut","port":"Y"},
+                    "to": {"id": "outMux","port": "in0"}
+                },
+                {
+                    "from": {"id": "flipflop","port":"out"},
+                    "to": {"id": "outMux","port": "in1"}
+                },
+                {
+                    "from": {"id": "outMux","port":"out"},
+                    "to": {"id": "outY","port": "in"}
+                },
+                {
+                    "from": {"id": "flipflop","port":"out"},
+                    "to": {"id": "inMux","port": "in1"}
+                },
+                {
+                    "from": {"id": "inMuxConf","port":"out"},
+                    "to": {"id": "inMux","port": "sel"}
+                },
+                {
+                    "from": {"id": "outMuxConf","port":"out"},
+                    "to": {"id": "outMux","port": "sel"}
+                },
+                {
+                    "from": {"id": "clk","port":"out"},
+                    "to": {"id": "flipflop","port": "clk"}
+                }
+            ]
+        }
+    }
+}
