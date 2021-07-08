@@ -151,7 +151,6 @@
                     "type": "Memory",
                     "bits": 2,
                     "abits": 3,
-                    "words": 8,
                     "offset": 0,
                     "rdports": [
                         {}
