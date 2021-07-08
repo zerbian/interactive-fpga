@@ -3,44 +3,53 @@
         "clb0": {
             "type": "Subcircuit",
             "celltype": "clb",
-            "label": "LB"
+            "label": "LB",
+            "position": {"x": 50,"y": 0}
         },
         "clb1": {
             "type": "Subcircuit",
             "celltype": "clb",
-            "label": "LB"
+            "label": "LB",
+            "position": {"x": 50,"y": 110}
         },
         "clb2": {
             "type": "Subcircuit",
             "celltype": "clb",
-            "label": "LB"
+            "label": "LB",
+            "position": {"x": 50,"y": 220}
         },
         "clb3": {
             "type": "Subcircuit",
             "celltype": "clb",
-            "label": "LB"
+            "label": "LB",
+            "position": {"x": 50,"y": 330}
         },
         "reset": {
             "type": "Button",
-            "label": "reset"
+            "label": "reset",
+            "position": {"x": -50,"y": 50}
         },
         "constant1": {
             "type": "Constant",
-            "constant": "1"
+            "constant": "1",
+            "position": {"x": -50,"y": 0}
         },
         "clock": {
             "type": "Clock",
-            "label": "clock"
+            "label": "clock",
+            "position": {"x": -70,"y": 330}
         },
         "merge": {
             "type": "BusGroup",
-            "groups": [1,1,1,1]
+            "groups": [1,1,1,1],
+            "position": {"x": 220,"y": 200}
         },
         "outNum": {
             "type": "NumDisplay",
             "label": "count",
             "bits": 4,
-            "numbase": "dec"
+            "numbase": "dec",
+            "position": {"x": 220,"y": 0}
         }
     },
     "connectors": [
@@ -112,7 +121,7 @@
             "from": {"id": "merge", "port": "out"},
             "to": {"id": "outNum", "port": "in"}
         }
-        
+
     ],
     "subcircuits": {
         "3LUT2": {
@@ -135,7 +144,7 @@
                         "10",
                         "00",
                         "01",
-                        "01"                            
+                        "01"
                     ]
                 },
                 "inA": {
