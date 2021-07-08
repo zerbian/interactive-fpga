@@ -5,48 +5,114 @@
             "celltype": "clb",
             "label": "LB"
         },
-        "bA": {
+        "clb1": {
+            "type": "Subcircuit",
+            "celltype": "clb",
+            "label": "LB"
+        },
+        "clb2": {
+            "type": "Subcircuit",
+            "celltype": "clb",
+            "label": "LB"
+        },
+        "clb3": {
+            "type": "Subcircuit",
+            "celltype": "clb",
+            "label": "LB"
+        },
+        "reset": {
             "type": "Button",
             "label": "reset"
         },
-        "bB": {
-            "type": "Button",
-            "label": "in"
+        "constant1": {
+            "type": "Constant",
+            "constant": "1"
         },
         "clock": {
-            "type": "Button",
+            "type": "Clock",
             "label": "clock"
         },
-        "outA": {
-            "type": "Lamp",
-            "label": "out'"
+        "merge": {
+            "type": "BusGroup",
+            "groups": [1,1,1,1]
         },
-        "outB": {
-            "type": "Lamp",
-            "label": "out"
+        "outNum": {
+            "type": "NumDisplay",
+            "label": "count",
+            "bits": 4,
+            "numbase": "dec"
         }
     },
     "connectors": [
         {
-            "from": {"id": "bA", "port": "out"},
+            "from": {"id": "constant1", "port": "out"},
+            "to": {"id": "clb0", "port": "B"}
+        },
+        {
+            "from": {"id": "reset", "port": "out"},
             "to": {"id": "clb0", "port": "A"}
         },
         {
-            "from": {"id": "bB", "port": "out"},
-            "to": {"id": "clb0", "port": "B"}
+            "from": {"id": "reset", "port": "out"},
+            "to": {"id": "clb1", "port": "A"}
+        },
+        {
+            "from": {"id": "reset", "port": "out"},
+            "to": {"id": "clb2", "port": "A"}
+        },
+        {
+            "from": {"id": "reset", "port": "out"},
+            "to": {"id": "clb3", "port": "A"}
         },
         {
             "from": {"id": "clock", "port": "out"},
             "to": {"id": "clb0", "port": "clk"}
         },
         {
+            "from": {"id": "clock", "port": "out"},
+            "to": {"id": "clb1", "port": "clk"}
+        },
+        {
+            "from": {"id": "clock", "port": "out"},
+            "to": {"id": "clb2", "port": "clk"}
+        },
+        {
+            "from": {"id": "clock", "port": "out"},
+            "to": {"id": "clb3", "port": "clk"}
+        },
+        {
             "from": {"id": "clb0", "port": "X"},
-            "to": {"id": "outA", "port": "in"}
+            "to": {"id": "clb1", "port": "B"}
+        },
+        {
+            "from": {"id": "clb1", "port": "X"},
+            "to": {"id": "clb2", "port": "B"}
+        },
+        {
+            "from": {"id": "clb2", "port": "X"},
+            "to": {"id": "clb3", "port": "B"}
         },
         {
             "from": {"id": "clb0", "port": "Y"},
-            "to": {"id": "outB", "port": "in"}
+            "to": {"id": "merge", "port": "in0"}
+        },
+        {
+            "from": {"id": "clb1", "port": "Y"},
+            "to": {"id": "merge", "port": "in1"}
+        },
+        {
+            "from": {"id": "clb2", "port": "Y"},
+            "to": {"id": "merge", "port": "in2"}
+        },
+        {
+            "from": {"id": "clb3", "port": "Y"},
+            "to": {"id": "merge", "port": "in3"}
+        },
+        {
+            "from": {"id": "merge", "port": "out"},
+            "to": {"id": "outNum", "port": "in"}
         }
+        
     ],
     "subcircuits": {
         "3LUT2": {
@@ -62,14 +128,14 @@
                     ],
                     "wrports": [],
                     "memdata": [
-                        "01",
-                        "01",
-                        "11",
-                        "01",
+                        "00",
+                        "00",
                         "10",
                         "00",
+                        "10",
                         "00",
-                        "00"                        
+                        "01",
+                        "01"                            
                     ]
                 },
                 "inA": {
