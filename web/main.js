@@ -17,20 +17,35 @@ function loadJSON(filename, callback) {
         .catch(err => console.error(err));
 }
 
-function loadCircuit(id, filename) {
+// function loadCircuit(id, filename) {
+//     loadJSON(filename, json => {
+//         //var json = JSON.parse(res);
+//         var cir = new digitaljs.Circuit(json);
+//         var can = cir.displayOn($('#' + id));
+//         cir.start();
+//     });
+// };
+
+function loadCircuit(htmlElement, filename) {
     loadJSON(filename, json => {
         //var json = JSON.parse(res);
         var cir = new digitaljs.Circuit(json);
-        var can = cir.displayOn($('#' + id));
+        var can = cir.displayOn(htmlElement);
         cir.start();
     });
 };
 
-var circuits = [
-    //{"id":"c1", "path": "./circuits/clb.json"},
-    {"id":"c2", "path": "./circuits/4bitAdd.json"}
-];
+// var circuits = [
+//     //{"id":"c1", "path": "./circuits/clb.json"},
+//     {"id":"c2", "path": "./circuits/1bitRegister.json"}
+// ];
 
-circuits.forEach(value => {
-    loadCircuit(value.id, value.path);
-});
+// circuits.forEach(value => {
+//     loadCircuit(value.id, value.path);
+// });
+
+var circuits = document.getElementsByClassName('circuit')
+for (let elem of circuits) {
+    var file = "./circuits/" + elem.getAttribute("circuit") + ".json";
+    loadCircuit(elem, file);
+}
