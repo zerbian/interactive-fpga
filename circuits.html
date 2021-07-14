@@ -80,7 +80,36 @@
                         </ol>
                         <p>Die Multiplexer sind in unserem Beispiel schon richtig konfiguriert und sorgen dafür, dass die <span>c<sub>in</sub></span> Leitung mit dem <span>C</span>-Eingang der LUT verbunden ist und der <span>Y</span>-Ausgang auch richtig weitergeleitet wird.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos excepturi rem autem animi fuga recusandae? Aspernatur, sunt illo. Libero adipisci similique magnam sit deserunt recusandae. Nulla repellat nam, molestias impedit hic asperiores minus eveniet vero eaque accusamus aperiam nihil ab dolor alias repudiandae molestiae, doloremque voluptate qui. Vero optio quasi ullam dolores quidem, accusantium ea laborum. Tempore blanditiis earum pariatur quibusdam porro quisquam, qui, quaerat sit ducimus dignissimos harum reiciendis iusto quae nesciunt perspiciatis minus velit in? Odio illo beatae perferendis ipsam animi fugit dolorum recusandae impedit sit sunt quia magni ducimus voluptatum consequatur cum debitis nihil possimus eos, facilis consectetur rem ab voluptatem. Deleniti et laboriosam dignissimos iste culpa tenetur ab, reprehenderit, est recusandae obcaecati quis numquam itaque necessitatibus quisquam iure, ipsa corporis sequi nisi ea voluptatibus doloribus aspernatur dolore fugiat nobis? Repellat iure aperiam, praesentium error placeat hic omnis modi quod itaque nesciunt eius cumque molestiae eos. Beatae dolor similique debitis qui cupiditate vel assumenda doloremque aut est, dolorem voluptatem vero libero nam, enim deserunt necessitatibus autem molestias laboriosam incidunt? Recusandae corporis eos, praesentium sequi quis culpa quas ducimus, expedita suscipit non tempore maxime fuga sint repellendus, iste corrupti enim esse dolores voluptatem nostrum temporibus! At, labore mollitia.</p>
+                        <p>Der Speicher der LUT ist noch nicht ganz korrekt gefüllt: wenn du in der Schaltung links mal alle möglichen Belegungen für die Eingänge ausprobierst wirst du feststellen dass wenn alle Eingänge <span>1</span> bzw. <span>HIGH</span> sind, beide Ausgänge <span>0</span> bzw. <span>LOW</span> sind, was laut Wahrheitstabelle nicht richtig ist.</p>
+                        <h3>Deine Aufgabe</h3>
+                        <p>Versuche den Inhalt des Speichers so anzupassen, dass der Logikblock die logische Funktion eines Volladdierers implementiert.</p>
+                        <p>Genereller Hinweis: im <span>Memeory Contents</span>-Fenster kann man zum besseren Verständnis die Darstellung des Speichers auf binär (bin) stellen.</p>
+                        <ul>
+                            <li>
+                                <div class="tt">Lösungshinweis 1
+                                    <span class="ttt">Öffne das Memory Contents Fester der LUT und beobachte was passiert, wenn du die Eingänge aus- und anschaltest</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tt">Lösungshinweis 2
+                                    <span class="ttt">Text</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+            <article id="4bitAdd">
+                <section>
+                    <div class="sticky-wrap">
+                        <div class="circuit" circuit="4bitAdd"></div>
+                    </div>
+                    <div class="explain">
+                        <h2 >4 Bit Addierer</h2>
+                        <p>Nachdem wir jetzt einen einfachen 1 Bit Addierer mit unserem Logikblock umgesetzt haben können wir auch mehrere LB, die alle gleich konfiguriert sind, hintereinander schalten um z.B. einen 4 Bit Addierer zu bekommen.</p>
+                        <p>Dafür müssen wir jeweils den Übertragsausgang (<span>c<sub>out</sub></span> / <span>Y</span>) an den <span>C<sub>in</sub></span> / <span>C</span> Eingang des nächsten Volladdierers anschließen.</p>
+                        <h3>Deine Aufgabe</h3>
+                        <p>Füge in der Schaltung links die fehlenden Verbindung zwischen den Logikblöcken hinzu. Um zu testen, ob deine Verbindungen richtig sind kannst du bei <span>A</span> und <span>B</span> zwei Zahlen eingeben, die addiert werden sollen und bei <span>sum</span> wird dir das Ergebnis angezeigt.</p>
                     </div>
                 </section>
             </article>
