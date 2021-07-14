@@ -22,12 +22,13 @@ main {
 
 article {
     padding: 0.3em;
-    outline: red dotted 2px;
+    /* outline: red dotted 2px; */
     border-bottom: 1px solid;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 article h2 {
@@ -61,6 +62,8 @@ section {
 .circuit {
     margin: 1em 1em 1em 0em;
     border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.56); 
+box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.56);
 }
 
 p > span {
@@ -126,10 +129,10 @@ p + ul, ol {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
+}
   
   /* Tooltip text */
-  .tt .ttt {
+.tt .ttt {
     visibility: hidden;
     left: 110%;
     top: -10px;
@@ -143,9 +146,9 @@ p + ul, ol {
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
-  }
+}
   
   /* Show the tooltip text when you mouse over the tooltip container */
-  .tt:hover .ttt {
+.tt:hover .ttt {
     visibility: visible;
-  }
+}
