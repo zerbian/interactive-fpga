@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    scroll-behavior: smooth;
+}
+
+sup, sub{
+  color: gray;
+}
+
+
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/w3images/coffeehouse.jpg"); /*bild von gattern?? binary?*/
+    min-height: 75%;
+}
+
+div.gallery {
+    margin-left: 5%;
+  float: left;
+    align-self: center;
+    width: 40%;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.menu {
+    display: none;
+}
+
+td {
+  text-align: center;
+  
+}
+table, th, td{
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+th {
+  background-color: rgb(174, 187, 211);
+}
+p > span {
+    font-weight: bold;
+}
