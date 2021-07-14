@@ -1,34 +1,59 @@
-body, html {
-    height: 100%;
-    font-family: "Inconsolata", sans-serif;
-    scroll-behavior: smooth;
-    scroll-padding-top: 2em;
+:root {
+    --containermax: 1000px;
+    --navheight: 3em;
 }
 
-#intro {
-    padding-top: 3em;
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navheight);
+}
+
+body {
+    font-family: "Inconsolata", sans-serif;
 }
 
 main {
-    display: flex;
-    align-items: center;
+    padding-top: 5em;
+    width: min(var(--containermax), 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+article {
+    padding: 0.3em;
+    /* outline: red dotted 2px; */
+    border-bottom: 1px solid;
 }
 
 section {
     display: flex;
+    /* overflow: auto; */
 }
 
-.w3-content {
-    margin-left: 2em;
+.sticky-wrap {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: var(--navheight);
+    align-self: flex-start;
+}
+
+.explain {
+    margin: 0.5em;
 }
 
 .circuit {
-    position: sticky;
-    position: -webkit-sticky;
-    flex-shrink: 0;
-    margin-top: 2em;
+    margin: 1em 1em 1em 0em;
 }
 
 p > span {
     font-weight: bold;
+}
+
+p {
+   margin-block-start: 0; 
+}
+
+p + ul {
+    margin-block-start: -1em;
 }

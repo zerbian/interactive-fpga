@@ -10,30 +10,57 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 		<link rel="stylesheet" href="styleCircuits.css">
 	</head>
-    <body>
-        
+    <body class="w3-sand">
         <header>
             <nav class="w3-top">
                 <div class="w3-row w3-padding w3-black">
                     <div class="w3-col s2">
-                        <a href="#intro" class="w3-button w3-block w3-black">Intro</a>
+                        <a href="#intro" class="w3-button w3-block w3-black">Aufbau LB</a>
+                    </div>
+                    <div class="w3-col s2">
+                        <a href="#nd" class="w3-button w3-block w3-black">Intro</a>
                     </div>
                 </div>
             </nav>
         </header>
-        <main class="w3-sand w3-grayscale w3-large">
-            <section class="w3-container" id="intro">
-                <div class="circuit" circuit="clb"></div>
-                
-                <div class="w3-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, cum.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, in repellendus. Enim voluptatem cumque necessitatibus est recusandae doloremque unde! Praesentium quibusdam, voluptatibus dolorum, dignissimos repellat facere accusamus incidunt architecto laborum doloribus nisi quia ipsum ex quae ratione eligendi itaque, nobis temporibus veniam quas. Natus molestias rem ex ratione, reprehenderit iure accusantium dolorum et libero. Laudantium pariatur dolorum asperiores eius quos.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </section>
+        <main class="w3-large">
+            <h1>Interaktive Schaltungssimulation</h1>
+            <article>
+                <h2></h2>
+                <p>Auf dieser Seite kannst du sehen wie mit den den konfigurierbaren Logikblöcken komplexere Schaltungen umgesetzt werden. Die Schaltungen sind interaktiv, das bedeutet, du kannst die Eingänge der Schaltung ändern und die Ausgänge reagieren direkt darauf.</p>
+            </article>
+            <article id="intro">
+                <section>
+                    <div class="sticky-wrap">
+                        <div class="circuit" circuit="clb"></div>
+                    </div>
+                    <div class="explain">
+                        <h2 class="w3-tag w3-center">Aufbau LB</h2>
+                        <p>Auf der linken Seite ist nochmal der Aufbau eines vereinfachten Logikblockes sehen. Dabei sind die wichtigsten Bestandteile:</p>
+                        <ul>
+                            <li>3 Eingänge A, B, C</li>
+                            <li>2 Ausgänge X, Y, Z</li>
+                            <li>2 Multiplexer</li>
+                            <li>D-Flip-Flop</li>
+                            <li>Look Up Table</li>
+                        </ul>
+                    </div>
+                </section>
+                <p>Wenn man den Cursor auf die Look-Up-Table hält, taucht eine 🔍 auf und man kann sich das Bauteil in einem Extra Fenster anzeigen lassen. In diesem Beispiel wurde die LUT mit einem einfachen Speicherbaustein implementiert; mit einem weiteren Klick darauf kann man sich den Inhalt des Speichers angucken und ihn auch ändern.</p>
+                <p>Ähnlich wie bei PLAs oder ROMs wird der Eingang der LUT als Adresse im Speicher interpretiert und der Ausgang ist das was an der Adresse gespeichert ist. Somit kann ein Speicherbaustein eine beliebige logische Funktion implementieren. Zusammen mit dem Zustand der Multiplexer (MuxConf1 und MuxConf2) wird hier die Funktionsweise des Logikblockes festgelegt.</p>
+            </article>
+            <article id="nd">
+                <section>
+                    <div class="sticky-wrap">
+                        <div class="circuit" circuit="4bitCount"></div>
+                    </div>
+                    <div class="explain">
+                        <h2 class="w3-tag w3-center">Einführung</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, perferendis? Qui fugiat dolor iusto odio quaerat, accusantium eius velit magnam adipisci eveniet, incidunt aliquid ipsam ipsum saepe corrupti non totam earum sequi ex molestiae nostrum veniam delectus et! Quis voluptatem sint debitis itaque, quam quibusdam incidunt quisquam, eius quidem ea, autem nobis? Veritatis et suscipit, maiores porro delectus debitis? Voluptatem sequi odio perferendis exercitationem. Ab ducimus distinctio consequatur accusantium nisi a dolorem consequuntur quas animi assumenda rerum aperiam quasi quo, eligendi veniam maiores fuga nostrum, nihil deleniti ipsa molestias odio nam. Illo maxime at cumque, quas odio quos ullam fugit aliquam reiciendis? Sint minima dolore reiciendis omnis, assumenda necessitatibus soluta ratione vitae consectetur quis expedita quam optio numquam ab rerum cum! Ducimus perspiciatis maiores minima asperiores veritatis. Impedit, ratione fugiat odit molestiae rem nulla quam delectus, esse molestias facere velit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas inventore quod ipsum soluta qui, quae nihil. Quo vitae pariatur magnam, ex aperiam natus provident suscipit, culpa voluptas unde laborum? Vel magnam deserunt, dignissimos repellat natus ipsa distinctio molestias necessitatibus voluptatum in saepe aliquid dolorum voluptatibus ea quae omnis. Fugiat, obcaecati. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum corporis fuga laborum necessitatibus eum saepe officiis iste nam at odit non qui et sunt modi numquam quisquam, provident repellat est culpa, architecto sequi quas praesentium! Non deleniti nobis et voluptatum voluptas, sapiente odio ipsum placeat voluptates neque saepe consectetur expedita corrupti iusto a nesciunt veniam repudiandae, dicta possimus eum nisi eveniet vitae esse! Dolores aspernatur repudiandae nisi reprehenderit laboriosam provident in rerum ducimus, praesentium saepe! Iure voluptatibus consequuntur enim sapiente. Consequuntur quisquam earum ad deserunt eos saepe amet a, iure enim sit modi quod, voluptates sequi praesentium aperiam sunt illum! Enim architecto, sint reiciendis sunt consequatur, delectus necessitatibus ipsum dolorem consectetur minima, aut tempora labore nesciunt! Qui delectus nulla corporis minima cumque ratione error, nisi, maxime deleniti natus sit fugit eos magni incidunt possimus nesciunt saepe? Debitis recusandae ipsam tempora alias deserunt sapiente architecto libero voluptate consectetur. Consequuntur iste laborum sapiente! Quaerat, exercitationem! Et, voluptates consectetur laboriosam sed accusantium at fugiat alias id maxime. Ab vel soluta, dolorem consectetur rerum est magni veritatis minima quidem velit, quaerat eveniet debitis cupiditate corporis natus inventore deleniti excepturi earum commodi eum a accusamus alias. Aspernatur molestias quo maiores perferendis optio voluptate, fugit eum aliquam amet eaque perspiciatis suscipit, non reiciendis tenetur modi neque dolores exercitationem sapiente nostrum libero voluptas et vero! Quidem voluptates, dolore molestiae laudantium debitis nihil dolores dicta ipsa accusamus dignissimos atque fuga error repudiandae cumque similique cupiditate perspiciatis quisquam ut et velit? Quibusdam blanditiis doloremque consequatur nisi, consequuntur laboriosam vitae omnis ex asperiores vero quod repellendus nobis quas eius delectus distinctio modi incidunt assumenda beatae. Modi ad accusamus assumenda nemo sint reiciendis ipsa tempora architecto accusantium. Minima placeat cumque nam rem laboriosam dolore adipisci modi facilis, ab esse. Illum asperiores, cupiditate nisi architecto quis nulla ad fugiat eligendi! Consequuntur, praesentium!</p>
+                    </div>
+                </section>
+            </article>
         </main>
         <footer></footer>
         <script type="text/javascript" src="main.js"></script>
