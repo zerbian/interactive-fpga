@@ -53,5 +53,14 @@ p > span {
 }
 
 .circuit {
-    min-width: 100%;
+    border-radius: 10px;
+}
+
+.cirBox {
+    width: 120%;
+    display: flex;
+}
+
+.cirBox > p {
+    margin-left: 1em;
 }
