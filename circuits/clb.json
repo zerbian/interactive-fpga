@@ -7,7 +7,7 @@
             "position":{"x":200,"y":0}
         }, 
         "flipflop": {
-            "label":"",
+            "label":"D-Flip-Flop",
             "type":"Dff",
             "bits":1,
             "polarity": {"clock":true},
@@ -15,10 +15,12 @@
         },
         "inMux": {
             "type": "Mux",
+            "label": "mux",
             "position":{"x":100,"y":70}
         },
         "outMux": {
             "type": "Mux",
+            "label": "mux",
             "position":{"x":420,"y":50}
         },
         "inA": {
@@ -53,10 +55,12 @@
         },
         "inMuxConf": {
             "type": "Button",
+            "label":"MuxConf1",
             "position":{"x":30,"y":150}
         },
         "outMuxConf": {
             "type": "Button",
+            "label":"MuxConf2",
             "position":{"x":350,"y":150}
         }
     },
@@ -119,6 +123,7 @@
             "devices": {
                 "mem": {
                     "type": "Memory",
+                    "label": "Memory",
                     "bits": 2,
                     "abits": 3,
                     "words": 8,
