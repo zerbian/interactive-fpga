@@ -120,104 +120,29 @@
 					<p>Zusätzlich sind in jedem Logikblock auch Multiplexer und eine Art von Speicherelement, wie z.B. ein D-Flip-Flop vorhanden. In komplexeren Logikblöcken findet man häufig zusätzliche Komponenten wie Addierer oder Register.</p>
 
 					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes:</p>
-					<!-- <div id="c1"></div> -->
-					<div class="circuit" circuit="clb"></div>
+					<div class="cirBox">
+						<div class="circuit" circuit="clb"></div>
+						<ul>
+							<li>links Eingänge A, B, C</li>
+							<li>rechts Ausgänge X, Y</li>
+							<li>Look Up Table</li>
+							<li>D-Flip-Flop</li>
+							<li>Multiplexer</li>
+						</ul>
+					</div>
+					<p><a href="circuits.html">Auf dieser Seite</a> kannst du selber ausprobieren wie man Logikblöcke konfiguriert und miteinander kombiniert um Schaltungen zu realisieren.</p>
 					<!--
 						<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
 						<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
 						<p><sup>Quelle: Wikipedia (unbekannter Author)</sup></p>
 					-->
-
-					<p>LUTs bzw. Umsetzungstabellen sind Wahrheitstabellen, die vorberechnete Ergebnisse statisch definieren.</p>
-					<div>
-						<table style="width: 45%;float: left;margin-left: 10px;">
-							<caption>XOR</caption>
-							<tr>
-								<th>A</th>
-								<th>B</th>
-								<th>Y</th>
-							</tr>
-							<tr>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>0</td>
-								<td>1</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>0</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1</td>
-								<td>0</td>
-							</tr>
-
-						</table>
-
-						<table style="width: 45%;float: right;margin-right: 10px;">
-							<caption>NOR</caption>
-							<tr>
-								<th>A</th>
-								<th>B</th>
-								<th>Y</th>
-							</tr>
-							<tr>
-								<td>0</td>
-								<td>0</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>0</td>
-								<td>1</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>0</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1</td>
-								<td>0</td>
-							</tr>
-
-						</table>
-					</div>
-					<p><sub>Logiktabellen für XOR und NOR</sub></p>
 					<p>Ein FPGA kann ca. 500 bis 500000 LBs beinhalten, die je nach Wahl und erwünsche Funktion beliebig untereinander durch die In-und Outputs einzelner LBs verschaltet werden, diese können entweder dauerhaft oder reversible sein. Somit sind multiple verschiedene Schaltungen realisierbar. </p>
-					
 				</div>
-			</section>
-
-			<div class="gal" style="align-content: center;">
-				<div class="gallery">
-					<img src="img/konfigurierbarer LB Xilinx.jpeg" alt="Beispiel Xilinx Logikblock">
-					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
-					<!--<div class="desc">Add a description of the image here</div>-->
-				</div>
-
-				<div class="gallery">
-					<img src="img/LB kombinatorisch.jpeg" alt="kombinatorischer LB">
-					<!--<div class="desc">Add a description of the image here</div>-->
-				</div>
-				<!--
-				<div class="gallery">
-					<img src="img/LB kombinatorisch02.jpeg" alt="kombinatorischer LB 02">
-					<div class="desc">Add a description of the image here</div>
-				</div>
-				-->
-			</div>		
+			</section>	
 			
 			<section class="w3-container" id="funktion" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
-			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE GENAU FUNKTIONIEREN FPGAS?</span></h5>
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE GENAU FUNKTIONIEREN FPGAs?</span></h5>
 			  		<p>An sich hat ein neues, unkonfiguriertes FPGA keine Funktion, diese muss zuerst durch den Anwender entworfen werden.<br>
 						Es gibt zwei verschiedene Arten von FPGAs, reversible und irreversible, wie der Name schon sagt, handelt es sich beim Erstere um eine immer wieder neu charakterisierbare Schaltung welche in eine Speicherzelle geladen wird.
 						Letztere verwendet Antifuses wodurch die Verbindungen unter die LBs auf Dauer festgelegt werden. Vorteil davon ist das Ausfallen der Wartezeit, um die benötigten Daten von der Speicherzelle bei jedem Neustart zu laden.<br>
