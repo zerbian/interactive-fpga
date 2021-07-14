@@ -66,7 +66,7 @@
 					<p>FPGAs haben heute in Hinblick auf Flexibilität und Leistung eine wichtige Rolle in Entwicklungsprozessen. Und warum dies zutrifft werdet ihr hier auf dieser Webseite erfahren.</p>
 			  
 					<p><sub>RedPitaya STEMLab FPGA</sub></p>
-					<img src="img/STEMLab_FPGA.jpg" style="width:100%;max-width:1000px" class="w3-margin-top" alt="RedPitaya STEMLab FPGA frontview">
+					<img src="img/STEMLab_FPGA.jpg" style="width:100%;" class="w3-margin-top" alt="RedPitaya STEMLab FPGA frontview">
 					<p><sup>Quelle: Wikimedia Commons</sup></p>
 			  
 					<p>Hier erwarten euch nach jedem Themenblock Selbstkontrollen in Form von Quizze, die beliebig oft bearbeitet werden können.</p>
@@ -113,14 +113,15 @@
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE SIND FPGAS AUFGEBAUT? </span></h5>
 			  		<p>Ein FPGA besteht aus mehreren verschiedenen Komponenten wobei die <span>konfigurierbaren Logikblöcke</span> logische Funktionen implementieren. Zusammen mit den <span>Ein- und Ausgangsblöcken</span> und einer <span>konfigurierbaren Verbindungsstrukturen</span> bilden sie die allgemeine Struktur eines jeden FPGAs.</p>
 					
-					<img src="img/marix.jpeg" style="width:60%;max-width:1000px;margin-top:32px;align-self: center;" alt="FPGA Architektur">
+					<img src="img/marix.jpeg" style="width:70%;max-width:1000px;margin-top:32px;align-self: center;" alt="FPGA Architektur">
 					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
-					
-					<p>Die Schaltungen werden in Form von „Look Up Tables“ (abgekürzt LUTs) vereinfacht, womit beliebige Logikkombinationen implementiert werten. Integriert mit Multiplexer, Addierer, Clock-Eingänge, Speicherelemente(Flip-Flops) oder zusätzliche Register bilden zusammen ein Logikblock (LB).</p>
-					
-					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes.</p>
+
+					<p>Die <span>konfigurierbaren Logikblöcke</span> (CLB / LB) können mithilfe von „Look Up Tables“ (LUT) beliebige logische Funktionen implementieren. Sie können mithilfe von PLAs oder anderen Speicherbausteinen realisiert werden, jedoch ist eine Struktur aus Multiplexern häufiger vertreten.</p>
+					<p>Zusätzlich sind in jedem Logikblock auch Multiplexer und eine Art von Speicherelement, wie z.B. ein D-Flip-Flop vorhanden. In komplexeren Logikblöcken findet man häufig zusätzliche Komponenten wie Addierer oder Register.</p>
+
+					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes:</p>
 					<!-- <div id="c1"></div> -->
-					<div class="circuit" circuit="4bitCount"></div>
+					<div class="circuit" circuit="clb"></div>
 					<!--
 						<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
 						<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
