@@ -1,6 +1,6 @@
 :root {
     --containermax: 1000px;
-    --navheight: 3em;
+    --sticky-top: 3em;
 }
 
 html {
@@ -24,21 +24,36 @@ article {
     padding: 0.3em;
     /* outline: red dotted 2px; */
     border-bottom: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article h2 {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 section {
     display: flex;
+    flex-direction: row;
     /* overflow: auto; */
 }
 
 .sticky-wrap {
     position: -webkit-sticky; /* for Safari */
     position: sticky;
-    top: var(--navheight);
+    top: var(--sticky-top);
     align-self: flex-start;
 }
 
 .explain {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
     margin: 0.5em;
 }
 
@@ -54,6 +69,51 @@ p {
    margin-block-start: 0; 
 }
 
-p + ul {
+ul, ol {
+    padding-left: 3em;
+    margin-right: auto;
+}
+
+p + ul, ol {
     margin-block-start: -1em;
+}
+
+.truthtable {
+    font-size: 0.7em;
+    border-collapse: collapse;
+    margin-bottom: 3em;
+    width: 50%;
+    background: #fff;
+    table-layout: fixed;
+}
+.truthtable td,.truthtable th {
+    padding: 0.75em 1.5em;
+    text-align: left;
+}
+.truthtable td.err {
+    background-color: #e992b9;
+    color: #fff;
+    font-size: 0.75em;
+    text-align: center;
+    line-height: 1;
+}
+.truthtable th {
+    background-color: #81c483;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+.truthtable tbody th {
+	background-color: #81c483;
+}
+.truthtable tbody tr:nth-child(2n-1) {
+    background-color: #f5f5f5;
+    transition: all .125s ease-in-out;
+}
+.truthtable tbody tr:hover {
+    background-color: rgba(129,208,177,.3);
+}
+
+.truthtable tr > *:nth-child(3) {
+    border-right: 1px solid black;
 }
