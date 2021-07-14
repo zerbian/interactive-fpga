@@ -43,10 +43,12 @@
         },
         "outX": {
             "type": "Lamp",
+            "label": "X",
             "position":{"x":500,"y":-50}
         },
         "outY": {
             "type": "Lamp",
+            "label": "Y",
             "position":{"x":500,"y":-0}
         },
         "inMuxConf": {
