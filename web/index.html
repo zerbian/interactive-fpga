@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<script type="text/javascript" src="https://tilk.github.io/digitaljs/main.js"></script>
@@ -7,11 +7,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 	</head>
 
 	<body>
-		<div class="w3-top">
+		<nav class="w3-top">
 			<div class="w3-row w3-padding w3-black">
 			
 				<div class="w3-col s2">
@@ -38,7 +39,7 @@
 					<a href="#modell" class="w3-button w3-block w3-black">INTERAKTIVES MODELL</a>
 			  	</div>
 			</div>
-		</div>
+		</nav>
 		  
 		<!-- Header with image -->
 		<header class="bgimg w3-display-container w3-grayscale-min" id="home">
@@ -56,10 +57,10 @@
 		</header>
 		  
 		<!-- Add a background color and large text to the whole page -->
-		<div class="w3-sand w3-grayscale w3-large">
+		<main class="w3-sand w3-grayscale w3-large">
 		  
 			<!-- About Container -->
-			<div class="w3-container" id="about">
+			<section class="w3-container" id="about">
 				<div class="w3-content" style="max-width:700px">
 					<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">FPGA</span></h5>
 					<p>FPGAs haben heute in Hinblick auf Flexibilität und Leistung eine wichtige Rolle in Entwicklungsprozessen. Und warum dies zutrifft werdet ihr hier auf dieser Webseite erfahren.</p>
@@ -88,14 +89,14 @@
 					</ul>
 			  
 				</div>
-			</div>
+			</section>
 		  
 		<!-- Menu Container -->
-			<div class="w3-container" id="was">
+			<section class="w3-container" id="was">
 				<div class="w3-content" style="max-width:700px">
 		   
 					<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WAS IST EIN FPGA?</span></h5>
-					<p>Der Name FPGA steht für „feldprogrammierbares Gate-Array“, was bedeutet, dass dieses in einem Feld aus einer Struktur von Logikgattern programmiert wird. Wobei programmieren eher ein irreführender Begriff ist, da es um eine Hardwarebeschreibungsspache handelt, welches die Eigenschaften der Verbindungswege unter den Logikelemente neu definiert.</p>
+					<p>Der Name FPGA steht für „Field Programmable Gate Array“ (dt. „programmierbare Logikgatter-Anordnung“), was bedeutet, dass dieses in eine Anordnung aus einer Struktur von Logikgattern programmiert wird. Wobei programmieren eher ein irreführender Begriff ist, da es um eine Hardwarebeschreibungsspache handelt, welches die Eigenschaften der Verbindungswege unter den Logikelemente neu definiert.</p>
 			
 				</div>  
 
@@ -108,9 +109,9 @@
 					<p>FPGAs haben für Entwicklern insbesondere im Hinblick auf die hohe Rechenleistung und die Flexibilität beim Design und der Leistung pro Watt eine Menge zu bieten.</p>
 					<p>Dabei ist nicht nur ein hohes Maß an Rechenleistung gefordert, sondern auch ein deterministisches Verhalten in Echtzeit.</p>
 				</div>
-		  	</div>
+		  	</section>
 		 
-			<div class="w3-container" id="wie" style="padding-bottom:32px;">
+			<section class="w3-container" id="wie" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE SIND FPGAS AUFGEBAUT? </span></h5>
 			  		<p>Sie basieren auf ein Logikblock-Konzept, welche aus einfachen logischen Schaltungen, die flexibel programmierbar sind bestehen. Oft werden sie deutlichkeitshalber zweidimensional oder auch dreidimensional dargestellt.</p>
@@ -122,7 +123,7 @@
 					
 					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes.</p>
 					<!-- <div id="c1"></div> -->
-					<div class="circuit" circuit="1bitRegister"></div>
+					<div class="circuit" circuit="4bitCount"></div>
 					<!--
 						<p><sub>Logikblock eines FPGA mit 4-bit-LUT und optionalem Ausgangs-Flipflop</sub></p>
 						<img src="img/LB.jpeg" style="width:80%; max-width:1000px; margin-top:32px;" alt="LogikBlock">
@@ -195,7 +196,7 @@
 					<p>Ein FPGA kann ca. 500 bis 500000 LBs beinhalten, die je nach Wahl und erwünsche Funktion beliebig untereinander durch die In-und Outputs einzelner LBs verschaltet werden, diese können entweder dauerhaft oder reversible sein. Somit sind multiple verschiedene Schaltungen realisierbar. </p>
 					
 				</div>
-			</div>
+			</section>
 
 			<div class="gal" style="align-content: center;">
 				<div class="gallery">
@@ -215,11 +216,8 @@
 				</div>
 				-->
 			</div>		
-				
-
-		<div class="w3-sand w3-grayscale w3-large"></div>
 			
-			<div class="w3-container" id="funktion" style="padding-bottom:32px;">
+			<section class="w3-container" id="funktion" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE GENAU FUNKTIONIEREN FPGAS?</span></h5>
 			  		<p>An sich hat ein neues, unkonfiguriertes FPGA keine Funktion, diese muss zuerst durch den Anwender entworfen werden.<br>
@@ -230,9 +228,9 @@
 					</p>
 
 				</div>
-			</div>
+			</section>
 
-			<div class="w3-container" id="realitaet" style="padding-bottom:32px;">
+			<section class="w3-container" id="realitaet" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE WERDEN FPGAS IN DER REALITÄT UMGESETZT?</span></h5>
 			  		<p>Ein FPGA kommt meist zusammen mit einem Development Board, welches schon die wichtigsten Features und Bauelemente beinhaltet. Beliebte Features für ein Beginners FPGA-Boards sind z.B. USB Interface, Segment LED Display, Speicherzellen, Push Buttons.</p>
@@ -255,9 +253,9 @@
 
 					<p>Eine Website die einige Beispiele in VHDL anbietet ist <a href="https://www.mikrocontroller.net/articles/VHDL_Softwarepool" target="_blank" class="w3-hover-text-green">mikrocontroller.net</a>.</p>
 				</div>
-			</div>
+			</section>
 		  
-			<div class="w3-container" id="vor-und nachteile">
+			<section class="w3-container" id="vor-und nachteile">
 				<div class="w3-content" style="max-width:700px">
 		   
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">VOR-UND NACHTEILE</span></h5>
@@ -294,15 +292,15 @@
 						</ul>
 		  			</div>  
 				</div>
-	  		</div>
+	  		</section>
 
-			<div class="w3-container" id="anwendung" style="padding-bottom:32px;">
+			<section class="w3-container" id="anwendung" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">ANWENDUNGSGEBIETE</span></h5>
 					<p>Während FPGAs früher hauptsächlich als so genannte "Glue-Logic" (auch: Verbindungslogik, zur Verbindung von zwei logischen Schaltungen) dienten, finden sie heute in vielen weiteren Gebieten Verwendung. Sei es in Echtzeit Verarbeitungen (von einfachen bis zu komplexen Algorithmen) oder Digitalen Filtern. Selbst zur Ausführung von schnellen Fourier Transformationen werden sie herangezogen. FPGAs werden auch in Parallelcomputern verbaut wobei auch sogenannte FPGA-Rechner existieren die zur Berechnung von Kryptografischer Verfahren dienen.</p>
 					<p>Im Ganzen finden sie vor allem also Gebrauch in den Bereichen der Digitaltechnik und dort, wo es vor allem auf schnelle Signalverarbeitung  und flexible Änderung der Schaltungen ankommt.</p>
 				</div>
-			</div>
+			</section>
 
 
 			<div class="w3-container" id="modell" style="padding-bottom:32px;">
@@ -312,7 +310,7 @@
 			</div>
 
 			<!-- End page content -->
-		</div>
+		</main>
 	
 		<footer>
 			<ul>
@@ -348,6 +346,8 @@
 			body, html {
 			  	height: 100%;
 			  	font-family: "Inconsolata", sans-serif;
+				scroll-behavior: smooth;
+				scroll-padding-top: 2em;
 			}
 
 			sup, sub{
