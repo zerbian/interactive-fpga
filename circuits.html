@@ -15,7 +15,7 @@
             <nav class="w3-top">
                 <div class="w3-row w3-padding w3-black">
                     <div class="w3-col s2">
-                        <a href="#intro" class="w3-button w3-block w3-black">Aufbau LB</a>
+                        <a href="#intro" class="w3-button w3-block w3-black">Aufbau Logikblock</a>
                     </div>
                     <div class="w3-col s2">
                         <a href="#1bitAdd" class="w3-button w3-block w3-black">1 Bit Addierer</a>
@@ -37,7 +37,7 @@
                         <div class="circuit" circuit="clb"></div>
                     </div>
                     <div class="explain">
-                        <h2 >Aufbau LB</h2>
+                        <h2 >Aufbau Logikblock</h2>
                         <p>Auf der linken Seite ist nochmal der Aufbau eines vereinfachten Logikblockes zu sehen. Dabei sind die wichtigsten Bestandteile:</p>
                         <ul>
                             <li>3 Eingänge A, B, C</li>
@@ -66,7 +66,7 @@
                 <h2 class="w3-tag w3-center">1 Bit Addierer</h2>
                 <p>Jetzt wollen wir tatsächlich mal eine Schaltung mit unserem Logikblock implementieren. Unser LB hat drei Eingänge und zwei Ausgänge. Zufällig hat ein Volladdierer genau die gleiche Anzahl von Ein- und Ausgängen.</p>
                 <section>
-                    <div class="sticky-wrap" style="--sticky-top: 30vh;">
+                    <div class="sticky-wrap" style="--sticky-top: 20vh;">
                         <div class="circuit" circuit="1bitAdd"></div>
                     </div>
                     <div class="explain">
@@ -86,13 +86,13 @@
                         <p>Genereller Hinweis: im <span>Memeory Contents</span>-Fenster kann man zum besseren Verständnis die Darstellung des Speichers auf binär (bin) stellen.</p>
                         <ul>
                             <li>
-                                <div class="tt">Lösungshinweis 1
+                                <div class="tt">Lösungshinweis
                                     <span class="ttt">Öffne das Memory Contents Fester der LUT und beobachte was passiert, wenn du die Eingänge aus- und anschaltest</span>
                                 </div>
                             </li>
                             <li>
-                                <div class="tt">Lösungshinweis 2
-                                    <span class="ttt">Text</span>
+                                <div class="tt">Lösung
+                                    <span class="ttt sol1">Im Memeory Content muss an der letzten Stelle eine 11 stehen.</span>
                                 </div>
                             </li>
                         </ul>
@@ -114,7 +114,17 @@
                 </section>
             </article>
         </main>
-        <footer></footer>
+        <footer>
+			<ul>
+				<li><a href="index.html">Hauptseite</a></li>
+				<li><a href="impressum.html">Impressum</a></li>
+				<li><a href="https://github.com/zerbian/interactive-fpga">GitHub</a></li>
+			</ul>
+		</footer>
+		<!-- Footer -->
+		<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  		</footer>
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
