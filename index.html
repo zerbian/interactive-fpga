@@ -44,15 +44,15 @@
 		<!-- Header with image -->
 		<header class="bgimg w3-display-container w3-grayscale-min" id="home">
 			<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-			  	<span class="w3-tag">img digitale systeme</span>
+			  	<span class="w3-tag">modul digitale systeme</span>
 			</div>
 
 			<div class="w3-display-middle w3-center">
-			  	<span class="w3-text-white" style="font-size:90px">the<br>Cafe</span>
+			  	<span class="w3-text-white" style="font-size:90px;font-weight: bold;">FPGAS</span>
 			</div>
 
 			<div class="w3-display-bottomright w3-center w3-padding-large">
-			  	<span class="w3-text-white">15 Adr street, 5015</span>
+			  	<span class="w3-text-white">Eine kleine Einführung in die Welt der FPGAs</span>
 			</div>
 		</header>
 		  
@@ -69,7 +69,7 @@
 					<img src="img/STEMLab_FPGA.jpg" style="width:100%;" class="w3-margin-top" alt="RedPitaya STEMLab FPGA frontview">
 					<p><sup>Quelle: Wikimedia Commons</sup></p>
 			  
-					<p>Hier erwarten euch nach jedem Themenblock Selbstkontrollen in Form von Quizze, die beliebig oft bearbeitet werden können.</p>
+					<p>Hier erwartet euch nach dem Durchgehen eine Selbstkontrolle in Form eines Quizzes, die beliebig oft bearbeitet werden kann.</p>
 					<p>Nach Durchlesen und Bearbeiten soll euch</p>
 					<ul>
 						<li>der Aufbau und die einzelnen Teilelemente</li>
@@ -195,7 +195,7 @@
 	  
 		  			<div id="Vorteile" class="w3-container menu w3-padding-48 w3-card">
 						<ul>
-							<li>Ein FPGA ist eine sehr flexible Schaltung, bei jedem Powerup kann eine neue Konfiguration geladen und getestet werden, somit auch spezielle Algorithmen implementierbar</li><br>
+							<li>Ein FPGA ist eine sehr flexible Schaltung, bei jedem Powerup kann eine neue Konfiguration geladen und getestet werden, somit sind auch spezielle Algorithmen implementierbar</li><br>
 							<li>Im Gegensatz zu ASIC hat ein FPGA deutlich geringere Entwicklungskosten (als Massenproduktion)</li><br>
 							<li>Immer wieder neu konfigurierbar</li><br>
 							<li>Parallele Verarbeitung von Prozessoren sorgt für eine schnelle Verarbeitung (MC arbeitet sequenziell)</li><br>
@@ -225,6 +225,12 @@
 				</div>
 			</section>
 
+			<div class="w3-container" id="quiz" style="padding-bottom:32px;">
+				<div class="w3-content" style="max-width:700px;text-align: center;">
+					<a href="quiz.html" target="_blank" class="w3-hover-text-green">Zum Quiz</a><br>
+				</div>
+			</div>
+
 
 			<div class="w3-container" id="modell" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
@@ -235,17 +241,26 @@
 			<!-- End page content -->
 		</main>
 	
+		<!-- Footer -->
 		<footer>
-			<ul>
-				<li><a href="index.html">Hauptseite</a></li>
+			<ul style="float: left;">
+				<li style="list-style: none;"><h5>Weblinks und Quellen:</h5></li>
+				<li style="list-style: none;"><a href="https://de.wikipedia.org/wiki/Field_Programmable_Gate_Array">Wikipedia</a></li>
+				<li style="list-style: none;"><a href="https://www.mikrocontroller.net/articles/FPGA">mikrocontroller.net</a></li>
+				<li style="list-style: none;"><a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide">fraserinnovations.com</a></li>
+				<li style="list-style: none;"><a href="https://www.digikey.de/de/blog/fpgas-101-a-beginners-guide">digikey.de</a></li>
+				<li style="list-style: none;"><a href="https://docplayer.org/31325772-Grundaufbau-und-programmierung-eines-fpgas.html">docplayer.org</a></li>
+				<li style="list-style: none;"><a href="https://hardwarebee.com/field-programmable-gate-array-fpga-history-applications/">hardwarebee.com</a></li>
+				<li style="list-style: none;margin-bottom: 20px;"><a href="https://www.w3schools.com/w3css/w3css_templates.asp">Stylesheet</a></li>
+			</ul>
+		</footer>
+		<footer>
+			<ul style="float: right;">
 				<li><a href="impressum.html">Impressum</a></li>
 				<li><a href="https://github.com/zerbian/interactive-fpga">GitHub</a></li>
 			</ul>
 		</footer>
-		<!-- Footer -->
-		<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  		</footer>
+
 
 		<script>
 			// Tabbed Menu
