@@ -53,6 +53,7 @@
             "devices": {
                 "mem": {
                     "type": "Memory",
+                    "label": "Memory",
                     "bits": 2,
                     "abits": 3,
                     "words": 8,
@@ -69,7 +70,7 @@
                         "01",
                         "10",
                         "10",
-                        "11"                        
+                        "00"
                     ]
                 },
                 "inA": {
