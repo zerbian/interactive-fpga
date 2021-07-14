@@ -2,6 +2,7 @@ body, html {
     height: 100%;
     font-family: "Inconsolata", sans-serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 2em;
 }
 
 sup, sub{
@@ -45,4 +46,12 @@ th {
 }
 p > span {
     font-weight: bold;
+}
+
+.w3-content {
+    max-width: 900px;
+}
+
+.circuit {
+    min-width: 100%;
 }
