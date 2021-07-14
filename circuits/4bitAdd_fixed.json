@@ -116,6 +116,18 @@
             "to": {"id": "clb0", "port": "C"}
         },
         {
+            "from": {"id": "clb0", "port": "Y"},
+            "to": {"id": "clb1", "port": "C"}
+        },
+        {
+            "from": {"id": "clb1", "port": "Y"},
+            "to": {"id": "clb2", "port": "C"}
+        },
+        {
+            "from": {"id": "clb2", "port": "Y"},
+            "to": {"id": "clb3", "port": "C"}
+        },
+        {
             "from": {"id": "clb0", "port": "X"},
             "to": {"id": "mergeSum", "port": "in0"}
         },
