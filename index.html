@@ -7,8 +7,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
@@ -111,11 +111,11 @@
 			<section class="w3-container" id="wie" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE SIND FPGAS AUFGEBAUT? </span></h5>
-			  		<p>Sie basieren auf ein Logikblock-Konzept, welche aus einfachen logischen Schaltungen, die flexibel programmierbar sind bestehen. Oft werden sie deutlichkeitshalber zweidimensional oder auch dreidimensional dargestellt.</p>
+			  		<p>Ein FPGA besteht aus mehreren verschiedenen Komponenten wobei die <span>konfigurierbaren Logikblöcke</span> logische Funktionen implementieren. Zusammen mit den <span>Ein- und Ausgangsblöcken</span> und einer <span>konfigurierbaren Verbindungsstrukturen</span> bilden sie die allgemeine Struktur eines jeden FPGAs.</p>
 					
 					<img src="img/marix.jpeg" style="width:60%;max-width:1000px;margin-top:32px;align-self: center;" alt="FPGA Architektur">
-
 					<p><sup>Quelle: Tocci, Widmer, Moss 2010, Abb. 13-2</sup></p>
+					
 					<p>Die Schaltungen werden in Form von „Look Up Tables“ (abgekürzt LUTs) vereinfacht, womit beliebige Logikkombinationen implementiert werten. Integriert mit Multiplexer, Addierer, Clock-Eingänge, Speicherelemente(Flip-Flops) oder zusätzliche Register bilden zusammen ein Logikblock (LB).</p>
 					
 					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes.</p>
@@ -338,56 +338,6 @@
 			}
 			document.getElementById("myLink").click();
 		</script>
-
-		<style>
-			body, html {
-			  	height: 100%;
-			  	font-family: "Inconsolata", sans-serif;
-				scroll-behavior: smooth;
-				scroll-padding-top: 2em;
-			}
-
-			sup, sub{
-				color: gray;
-			}
-			
-
-			.bgimg {
-			  	background-position: center;
-			  	background-size: cover;
-			  	background-image: url("/w3images/coffeehouse.jpg"); /*bild von gattern?? binary?*/
-			  	min-height: 75%;
-			}
-
-			div.gallery {
-  				margin-left: 5%;
-				float: left;
-  				align-self: center;
-  				width: 40%;
-			}
-
-			div.gallery img {
-  				width: 100%;
-  				height: auto;
-			}
-			
-			.menu {
-			  	display: none;
-			}
-
-			td {
-				text-align: center;
-				
-			}
-			table, th, td{
-				border: 1px solid gray;
-				border-collapse: collapse;
-			}
-			th {
-				background-color: rgb(174, 187, 211);
-			}
-			</style>
-
-	<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
