@@ -94,7 +94,7 @@
             });
 
             // show number of correct answers out of total
-            resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            resultsContainer.innerHTML = `${numCorrect} von ${myQuestions.length}`;
         }
 
         function showSlide(n) {
@@ -136,15 +136,15 @@
             {
                 question: "Was gehört zu den Hardwarebeschreibungssprachen?",
                 answers: {
-                    a: "VHDL, ISP, Verilog, KARL, ABEL",
-                    b: "Verilog, C, Cuda, BASIC, COBOL",
-                    c: "COBOL, Cuda, VHDL, MIPS, HDL",
-                    d: "Verilog, ABEL, R, FORTH, DIWA"
+                    a: "VHDL,Verilog",
+                    b: " C, C++, BASIC",
+                    c: "Haskell, Javascript",
+                    d: "Assembler, Prolog"
                 },
                 correctAnswer: "a"
             },
             {
-                question: "Aus was können Logikblöcke bestehen?",
+                question: "Aus welchen Komponenten können Logikblöcke bestehen?",
                 answers: {
                     a: "PMOS, NMOS, CMOS",
                     b: "EPROM, SRAM, EEPROM",
@@ -171,16 +171,16 @@
                 },
                 correctAnswer: "a"
             },
-            {
-                question: "Was sind Bestandteile eines Multiplexers?",
-                answers: {
-                    a: "MUX, PALs, Eingänge, Ausgänge",
-                    b: "EPROMs, Steuersignale, MUX, CMOS",
-                    c: "PLAs, AND, OR, PALs",
-                    d: "Eingänge, Ausgänge, Steuersignale, Logikgatter"
-                },
-                correctAnswer: "d"
-            },
+            // {
+            //     question: "Was sind Bestandteile eines Multiplexers?",
+            //     answers: {
+            //         a: "MUX, PALs, Eingänge, Ausgänge",
+            //         b: "EPROMs, Steuersignale, MUX, CMOS",
+            //         c: "PLAs, AND, OR, PALs",
+            //         d: "Eingänge, Ausgänge, Steuersignale, Logikgatter"
+            //     },
+            //     correctAnswer: "d"
+            // },
             {
                 question: "Warum ist die Verarbeitung von FPGAs schneller als ein Microchip?",
                 answers: {
@@ -205,20 +205,19 @@
                 question: "Was sind Anwendungsgebiete von FPGAs?",
                 answers: {
                     a: "Speicher, Mikroprozessoren, Arithmetische Schaltwerke, Inputs/Outputs.",
-                    b: "Ein ASIC Ersatz.",
-                    c: "Ein Logik-Element in Altera und ein konfigurierbares Logikblock in Xilinx.",
-                    d: "Prototyping, Simulationen und Verifikation."
+                    b: "Ein Logik-Element in Altera und ein konfigurierbares Logikblock in Xilinx.",
+                    c: "Prototyping, Simulationen und Verifikation."
                 },
-                correctAnswer: "d"
+                correctAnswer: "c"
             },
-            {
-                question: "Hardwarebeschreibungssprachen werden heutzutage oft in C/C++ beschrieben.",
-                answers: {
-                    a: "wahr",
-                    b: "falsch",
-                },
-                correctAnswer: "a"
-            },
+            // {
+            //     question: "Hardwarebeschreibungssprachen werden heutzutage oft in C/C++ beschrieben.",
+            //     answers: {
+            //         a: "wahr",
+            //         b: "falsch",
+            //     },
+            //     correctAnswer: "a"
+            // },
             {
                 question: "Speicherbasierte Logikelemente werden auch als \"Funktionsgenerator\" bezeichnet.",
                 answers: {
@@ -237,16 +236,16 @@
                 },
                 correctAnswer: "d"
             },
-            {
-                question: "Wo werden FPGAs eingesetzt?",
-                answers: {
-                    a: "Als ASIC Ersatz, kürzere time-to-market Vorteile, flexibel und wiederprogrammierbar",
-                    b: "Speicher, Mikroprozessoren, Arithmetische Schaltwerke, Inputs/Outputs",
-                    c: "High-performance Computing, Hardware Verschnellerung, Broadcast",
-                    d: "Prototyping, Simulation und Verifikation"
-                },
-                correctAnswer: "b"
-            },
+            // {
+            //     question: "Wo werden FPGAs eingesetzt?",
+            //     answers: {
+            //         a: "Als ASIC Ersatz, kürzere time-to-market Vorteile, flexibel und wiederprogrammierbar",
+            //         b: "Speicher, Mikroprozessoren, Arithmetische Schaltwerke, Inputs/Outputs",
+            //         c: "High-performance Computing, Hardware Verschnellerung, Broadcast",
+            //         d: "Prototyping, Simulation und Verifikation"
+            //     },
+            //     correctAnswer: "b"
+            // },
             {
                 question: "Ein \"Programmable SRAM-based FPGA\" verwendet einen externen Speicher um eine SRAM Konfiguration innerhalb des FPGAs zu programmieren.",
                 answers: {
@@ -266,7 +265,7 @@
                 correctAnswer: "c"
             },
             {
-                question: "Warum wird eine Speicherzelle benötigt?",
+                question: "Warum wird eine Konfigurations-Speicherzelle benötigt?",
                 answers: {
                     a: "Die Speicherzellen werden benötigt um Signalwerte für den nächsten Takt zu speichern.",
                     b: "Dadurch werden die Eigenschaften der Verbindungswege zwischen den Logikblöcken permanent geändert.",
@@ -276,12 +275,12 @@
                 correctAnswer: "c"
             },
             {
-                question: "Aus was können LUTs bestehen?",
+                question: "Womit können LUTs direkt implementiert werden ?",
                 answers: {
-                    a: "AND/NOR/XNOR",
-                    b: "FlipFlops/Latches/NOR",
-                    c: "D-Latches/Multiplexer/LBs",
-                    d: "clk/MC/NAND/OR"
+                    a: "Multiplexer / PLA",
+                    b: "D-Flip-Flop / JK-Flip-Flop",
+                    c: "Halb- / Volladdierer",
+                    d: "Taktgeber / XOR-Gatter"
                 },
                 correctAnswer: "a"
             },
