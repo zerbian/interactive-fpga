@@ -23,6 +23,9 @@
                     <div class="w3-col s2">
                         <a href="#4bitAdd" class="w3-button w3-block w3-black">4 Bit Addierer</a>
                     </div>
+                    <div class="w3-col s2">
+                        <a href="#zaehler" class="w3-button w3-block w3-black">Zähler</a>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -110,6 +113,28 @@
                         <p>Dafür müssen wir jeweils den Übertragsausgang (<span>c<sub>out</sub></span> / <span>Y</span>) an den <span>C<sub>in</sub></span> / <span>C</span> Eingang des nächsten Volladdierers anschließen.</p>
                         <h3>Deine Aufgabe</h3>
                         <p>Füge in der Schaltung links die fehlenden Verbindung zwischen den Logikblöcken hinzu. Um zu testen, ob deine Verbindungen richtig sind kannst du bei <span>A</span> und <span>B</span> zwei Zahlen eingeben, die addiert werden sollen und bei <span>sum</span> wird dir das Ergebnis angezeigt.</p>
+                    </div>
+                </section>
+            </article>
+            <article id="zaehler">
+                <h2 class="w3-tag w3-center">Zähler</h2>
+                <p>Bisher haben wir die Speicherfunktionalität von unserem Logikblock komplett ignoriert, das soll sich jetzt ändern. In dem nächsten Beispiel </p>
+                <section>
+                    <div class="sticky-wrap">
+                        <div class="circuit" circuit="1bitCount"></div>
+                    </div>
+                    <div class="explain">
+                        <p>Auf der linken Seite ist wieder der einfach Logikblock dargestellt. Zum ersten Mal kommt jetzt auch der <span>clock</span>-Eingang zum Einsatz, der das D-Flip-Flip taktet.</p>
+                        <p>Wenn man in den Logikblock hineinguckt sieht man, dass der rechte Multiplexer so konfiguriert ist, dass am Ausgang <span>Y</span> das Signal vom D-Flip-Flop anliegt. Somit kann der Logikblock seinen gespeicherten Zustand auch an andere Logikblöcke weiterleiten.</p>
+                    </div>
+                </section>
+                <section>
+                    <div class="sticky-wrap">
+                        <div class="circuit" circuit="4bitCount"></div>
+                    </div>
+                    <div class="explain">
+                        <p>Da nur bis eins zählen langweilig ist können wir hier auch mehrere von unseren 1-bit Zählern miteinander verschalten. Damit kann man dann z.B. einen 4-Bit Zähler wie links implementieren.</p>
+                        <p>Dabei benutzen alle Logikblöcke die Selbe <span>clock</span> um alle D-Flip-Flops im gleichen Takt zu halten. Desweiteren teilen sich alle Logikblöcke die <span>reset</span>-Leitung mit dem der Zähler auf <span>0</span> zurück gesetzt werden kann.</p>
                     </div>
                 </section>
             </article>
