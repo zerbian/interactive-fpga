@@ -14,17 +14,20 @@
         <header>
             <nav class="w3-top">
                 <div class="w3-row w3-padding w3-black">
-                    <div class="w3-col s2">
+                    <div class="w3-col w2">
                         <a href="#intro" class="w3-button w3-block w3-black">Aufbau Logikblock</a>
                     </div>
-                    <div class="w3-col s2">
+                    <div class="w3-col w2">
                         <a href="#1bitAdd" class="w3-button w3-block w3-black">1 Bit Addierer</a>
                     </div>
-                    <div class="w3-col s2">
+                    <div class="w3-col w2">
                         <a href="#4bitAdd" class="w3-button w3-block w3-black">4 Bit Addierer</a>
                     </div>
-                    <div class="w3-col s2">
+                    <div class="w3-col w2">
                         <a href="#zaehler" class="w3-button w3-block w3-black">Zähler</a>
+                    </div>
+                    <div class="w3-col w2">
+                        <a href="#aussicht" class="w3-button w3-block w3-black">Aussicht</a>
                     </div>
                 </div>
             </nav>
@@ -137,6 +140,11 @@
                         <p>Dabei benutzen alle Logikblöcke die Selbe <span>clock</span> um alle D-Flip-Flops im gleichen Takt zu halten. Desweiteren teilen sich alle Logikblöcke die <span>reset</span>-Leitung mit dem der Zähler auf <span>0</span> zurück gesetzt werden kann.</p>
                     </div>
                 </section>
+            </article>
+            <article id="aussicht">
+                <h2 class="w3-tag w3-center">Aussicht</h2>
+                <p>Dieser kurzer Abschnitt soll jetzt einen kurzen Überblick darüber geben, wie man mit einfachen Logikblöcken Schaltnetzte und Schaltwerke implementiert, die komplexere Funktionalität haben. In den Beispielen hier haben wir nie mehr als vier Logikblöcke verwendet. In realen FPGAs die Anzahl von den Logikblöcke drei- bis fünfstellig.</p>
+                <p>Zusätzlich sind die einzelnen Logikblöcke durch viele Ein- und Ausgänge und mehrerer LUTs deutlich komplexer. Darum würde es noch viel komplizierter sein diese Logikblöcke per Hand zu konfigurieren und die Verbindungen per Hand zu setzen. Darum beschreibt man die zu realisierende Schaltung mittels einer Hardwarebeschreibungssprache und ein Kompilierer übersetzt diese dann in die Konfiguration für den FPGA.</p>
             </article>
         </main>
         <footer>
