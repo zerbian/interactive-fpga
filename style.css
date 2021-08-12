@@ -11,9 +11,9 @@ sup, sub{
 
 
 .bgimg {
-    background-position: center;
+    background-position: right;
     background-size: cover;
-    background-image: url("/w3images/coffeehouse.jpg"); /*bild von gattern?? binary?*/
+    background-image: url("img/binary-2910663_1920.jpg"); /*bild von gattern?? binary?*/
     min-height: 75%;
 }
 
@@ -34,18 +34,27 @@ div.gallery img {
 }
 
 td {
-  text-align: center;
-  
+  text-align: center;  
 }
+
 table, th, td{
   border: 1px solid gray;
   border-collapse: collapse;
 }
+
 th {
   background-color: rgb(174, 187, 211);
 }
+
 p > span {
     font-weight: bold;
+}
+
+#footer {
+  margin: 0;
+  font-size: medium;
+  color: gainsboro;
+  background-color: black;
 }
 
 .w3-content {

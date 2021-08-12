@@ -96,9 +96,9 @@
 				<div class="w3-content" style="max-width:700px">
 		   
 					<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WAS IST EIN FPGA?</span></h5>
-					<p>Die Abkürzung FPGA steht für „Field Programmable Gate Array“ (deutsch: „programmierbare Logikgatter-Anordnung“). Bei FPGAs handelt es sich somit um eine Anordnung von Logikgattern, die rekonfigurierbar sind.</p>
+					<p>Die Abkürzung FPGA steht für „<span>Field Programmable Gate Array</span>“ (deutsch: „programmierbare Logikgatter-Anordnung“). Bei FPGAs handelt es sich somit um eine Anordnung von Logikgattern, die rekonfigurierbar sind.</p>
 					<p>Im Allgemeinen sind sie ein integrierter Schaltkreis der Digitaltechnik, in welche eine logische Schaltung geladen werden kann.</p>
-					<p>FPGAs haben für Entwicklern insbesondere im Hinblick auf die hohe Rechenleistung und die Flexibilität beim Design eine Menge zu bieten.</p>
+					<p>FPGAs haben für Entwicklern insbesondere im Hinblick auf die <span>hohe Rechenleistung und die Flexibilität</span> beim Design eine Menge zu bieten.</p>
 					<p>Dabei ist nicht nur ein hohes Maß an Rechenleistung gefordert, sondern auch ein deterministisches Verhalten in Echtzeit.</p>
 			
 				</div>  
@@ -119,7 +119,7 @@
 					<p>Die <span>konfigurierbaren Logikblöcke</span> (CLB / LB) können mithilfe von „Look Up Tables“ (LUT) beliebige logische Funktionen implementieren. Sie können mithilfe von PLAs oder anderen Speicherbausteinen realisiert werden, jedoch ist eine Struktur aus Multiplexern häufiger vertreten.</p>
 					<p>Zusätzlich sind in jedem Logikblock auch Multiplexer und eine Art von Speicherelement, wie z.B. ein D-Flip-Flop vorhanden. In komplexeren Logikblöcken findet man häufig zusätzliche Komponenten wie Addierer oder Register.</p>
 
-					<p>Hier eine vereinfachte Darstellung von dem Aufbau eines Logikblockes:</p>
+					<p>Hier eine vereinfachte interaktive Darstellung von dem Aufbau eines Logikblockes:</p>
 					<div class="cirBox">
 						<div class="circuit" circuit="clb"></div>
 						<ul>
@@ -143,9 +143,9 @@
 			<section class="w3-container" id="funktion" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE GENAU FUNKTIONIEREN FPGAs?</span></h5>
-			  		<p>An sich hat ein neues, unkonfiguriertes FPGA keine Funktion, diese muss zuerst durch den Anwender entworfen werden.<br>
-						Es gibt zwei verschiedene Arten von FPGAs, reversible und irreversible, wie der Name schon sagt, handelt es sich beim Erstere um eine immer wieder neu charakterisierbare Schaltung welche in eine Speicherzelle geladen wird.
-						Letztere verwendet Antifuses wodurch die Verbindungen unter die LBs auf Dauer festgelegt werden. Vorteil davon ist das Ausfallen der Wartezeit, um die benötigten Daten von der Speicherzelle bei jedem Neustart zu laden.<br>
+			  		<p>An sich hat ein neues, <span>unkonfiguriertes FPGA keine Funktion</span>, diese muss zuerst durch den Anwender entworfen werden.<br>
+						Es gibt zwei verschiedene Arten von FPGAs, reversible und irreversible, wie der Name schon sagt, handelt es sich beim Erstere um eine <span>immer wieder neu charakterisierbare</span> Schaltung welche in eine Speicherzelle geladen wird.
+						Letztere verwendet Antifuses wodurch die Verbindungen unter die LBs <span>auf Dauer</span> festgelegt werden. Vorteil davon ist das <span>Ausfallen der Wartezeit</span>, um die benötigten Daten von der Speicherzelle bei jedem Neustart zu laden.<br>
 						Um diese Schaltungen zu konstruieren, wird hier eine Hardwarebeschreibungssprache verwendet, die die Bausteine und einzelne Bestandteile des FPGAs logisch miteinander verbindet. Dies erfolgt entweder graphisch oder per Editor.<br>
 						Wie bekannte Softwareprogrammiersprachen (Java, C) muss auch ein FPGA durch Tests oder Simulationen gedebuggt werden.
 					</p>
@@ -156,19 +156,19 @@
 			<section class="w3-container" id="realitaet" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WIE WERDEN FPGAS IN DER REALITÄT UMGESETZT?</span></h5>
-			  		<p>Ein FPGA kommt meist zusammen mit einem Development Board, welches schon die wichtigsten Features und Bauelemente beinhaltet. Beliebte Features für ein Beginners FPGA-Boards sind z.B. USB Interface, Segment LED Display, Speicherzellen, Push Buttons.</p>
+			  		<p>Ein FPGA kommt meist zusammen mit einem <span>Development Board</span>, welches schon die wichtigsten Features und Bauelemente beinhaltet. Beliebte Features für ein Beginners FPGA-Boards sind z.B. USB Interface, Segment LED Display, Speicherzellen, Push Buttons.</p>
 					<p>Weitere Beispiele mit Funktionen können hier gefunden werden: <a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide/#post-764-_Toc14450819" target="_blank" class="w3-hover-text-green">fraserinnovations.com</a></p>
 					<p><sub>PRA006/010 Development Board</sub></p>
 					<img src="img/blueFPGA.png" alt="PRA006/010 Development Board" style="width:90%;max-width:1000px">
 					<p><sup>Quelle: https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide/#post-764-_Toc14450819</sup></p>
 
-					<p>Die Neukonfiguration der Verbindungen zwischen den LBs muss jedes Mal vor Benutzung des FPGAs wieder geladen werden, was meist einige Sekunden dauert. Diese Konfigurationsinformationen werden in Speicherzellen (EPROM, EEPROM, SRAM) außerhalb der mehrmals programmierbaren FPGA gespeichert, was die konkrete Funktion dieser beschreibt. Die Verbindungen bleiben so lange aktiv bis das FPGA abgeschaltet ist.</p>
+					<p>Die Neukonfiguration der Verbindungen zwischen den LBs muss <span>jedes Mal vor Benutzung des FPGAs wieder geladen</span> werden, was meist einige Sekunden dauert. Diese Konfigurationsinformationen werden in Speicherzellen (EPROM, EEPROM, SRAM) außerhalb der mehrmals programmierbaren FPGA gespeichert, was die konkrete Funktion dieser beschreibt. Die <span>Verbindungen bleiben so lange aktiv bis das FPGA abgeschaltet ist</span>.</p>
 					
 					<p><sub>8-bit Microcomputer with EPROM (piggyback)</sub></p>
 					<img src="img/800px-Microcomputer_with_EPROM_(piggyback).jpg" style="width:50%;max-width:1000px;" alt="Microcomputer with EPROM">
 					<p><sup>Quelle: Wikimedia Commons</sup></p>
 
-					<p>Um die Verbindungsstrukturen zu beschreiben werden bestimmte Hardwarebeschreibungsspachen HDLs (Hardware Description Language) wie z.B. Verilog oder VHDL verwendet. Oft genutzte Strukturen und Codes werden von Herstellen für die Benutzer zur Verfügung gestellt, welche einfach eingebaut werden können.</p>
+					<p>Um die Verbindungsstrukturen zu beschreiben werden bestimmte <span>Hardwarebeschreibungsspachen HDLs</span> (Hardware Description Language) wie z.B. Verilog oder VHDL verwendet. Oft genutzte Strukturen und Codes werden von Herstellen für die Benutzer zur Verfügung gestellt, welche einfach eingebaut werden können.</p>
 					
 					<p><sub>VHDL source code for a signed adder</sub></p>
 					<img src="img/Vhdl_signed_adder.png" alt="Codeausschnitt eines Addierers">
@@ -220,8 +220,8 @@
 			<section class="w3-container" id="anwendung" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
 			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">ANWENDUNGSGEBIETE</span></h5>
-					<p>Während FPGAs früher hauptsächlich als so genannte "Glue-Logic" (auch: Verbindungslogik, zur Verbindung von zwei logischen Schaltungen) dienten, finden sie heute in vielen weiteren Gebieten Verwendung. Sei es in Echtzeit Verarbeitungen (von einfachen bis zu komplexen Algorithmen) oder Digitalen Filtern. Selbst zur Ausführung von schnellen Fourier Transformationen werden sie herangezogen. FPGAs werden auch in Parallelcomputern verbaut wobei auch sogenannte FPGA-Rechner existieren die zur Berechnung von Kryptografischer Verfahren dienen.</p>
-					<p>Im Ganzen finden sie vor allem also Gebrauch in den Bereichen der Digitaltechnik und dort, wo es vor allem auf schnelle Signalverarbeitung und flexible Änderung der Schaltungen ankommt.</p>
+					<p>Während FPGAs früher hauptsächlich als so genannte "Glue-Logic" (auch: Verbindungslogik, zur Verbindung von zwei logischen Schaltungen) dienten, finden sie heute in vielen weiteren Gebieten Verwendung. Sei es in <span>Echtzeit Verarbeitungen</span> (von einfachen bis zu komplexen Algorithmen) oder <span>Digitalen Filtern</span>. Selbst zur Ausführung von schnellen Fourier Transformationen werden sie herangezogen. FPGAs werden auch in Parallelcomputern verbaut wobei auch sogenannte FPGA-Rechner existieren die zur Berechnung von <span>Kryptografischer Verfahren</span> dienen.</p>
+					<p>Im Ganzen finden sie vor allem also Gebrauch in den <span>Bereichen der Digitaltechnik</span> und dort, wo es vor allem auf <span>schnelle Signalverarbeitung und flexible Änderung der Schaltungen</span> ankommt.</p>
 				</div>
 			</section>
 
@@ -234,32 +234,45 @@
 
 			<div class="w3-container" id="modell" style="padding-bottom:32px;">
 				<div class="w3-content" style="max-width:700px">
-			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">INTERAKTIVES MODELL</span></h5>
+			  		<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"><a href="circuits.html">ZUM INTERAKTIVEN MODELL</a></span></h5>
 				</div>
 			</div>
 
 			<!-- End page content -->
+
+			<!-- Footer -->
+			<div class="w3-container" id="footer">
+				<table style="float: left; padding: 0%;background-color: black;margin-bottom: 10px;border-color: black;">
+					<tr>
+						<th style="list-style: none;background-color: black;border-color: black;"><h5>WEBLINKS UND QUELLEN:</h5></th>
+					</tr>
+					<tr>
+						<td style="border-color: black;text-align: left;"><a href="https://de.wikipedia.org/wiki/Field_Programmable_Gate_Array">Wikipedia</a></td>
+						<td style="border-color: black;text-align: left;"><a href="https://www.mikrocontroller.net/articles/FPGA">mikrocontroller.net</a></td>
+					</tr>
+					<tr>
+						<td style="border-color: black;text-align: left;"><a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide">fraserinnovations.com</a></td>
+						<td style="border-color: black;text-align: left;"><a href="https://www.digikey.de/de/blog/fpgas-101-a-beginners-guide">digikey.de</a></td>
+					</tr>
+					<tr>
+						<td style="border-color: black;text-align: left;"><a href="https://docplayer.org/31325772-Grundaufbau-und-programmierung-eines-fpgas.html">docplayer.org</a></td>
+						<td style="border-color: black;text-align: left;"><a href="https://hardwarebee.com/field-programmable-gate-array-fpga-history-applications/">hardwarebee.com</a></td>
+					</tr>
+					<tr>
+						<td style="border-color: black;text-align: left;"><a href="https://www.sitepoint.com/simple-javascript-quiz/">Quiz Vorlage</a></li>
+						<td style="border-color: black;text-align: left;"><a href="https://www.w3schools.com/w3css/w3css_templates.asp">Stylesheet</a></td>
+					</tr>
+				</table>
+		
+				<ul style="float: right;">
+					<li style="list-style: none;"><a href="impressum.html">Impressum</a></li>
+					<li style="list-style: none;"><a href="https://github.com/zerbian/interactive-fpga">GitHub</a></li>
+				</ul>
+			</footer>
+
 		</main>
 	
-		<!-- Footer -->
-		<footer>
-			<ul style="float: left;">
-				<li style="list-style: none;"><h5>Weblinks und Quellen:</h5></li>
-				<li style="list-style: none;"><a href="https://de.wikipedia.org/wiki/Field_Programmable_Gate_Array">Wikipedia</a></li>
-				<li style="list-style: none;"><a href="https://www.mikrocontroller.net/articles/FPGA">mikrocontroller.net</a></li>
-				<li style="list-style: none;"><a href="https://fraserinnovations.com/fpga-for-beginners/fpga-board-for-beginner-fii-pra006-010-hardware-reference-guide">fraserinnovations.com</a></li>
-				<li style="list-style: none;"><a href="https://www.digikey.de/de/blog/fpgas-101-a-beginners-guide">digikey.de</a></li>
-				<li style="list-style: none;"><a href="https://docplayer.org/31325772-Grundaufbau-und-programmierung-eines-fpgas.html">docplayer.org</a></li>
-				<li style="list-style: none;"><a href="https://hardwarebee.com/field-programmable-gate-array-fpga-history-applications/">hardwarebee.com</a></li>
-				<li style="list-style: none;margin-bottom: 20px;"><a href="https://www.w3schools.com/w3css/w3css_templates.asp">Stylesheet</a></li>
-			</ul>
-		</footer>
-		<footer>
-			<ul style="float: right;">
-				<li><a href="impressum.html">Impressum</a></li>
-				<li><a href="https://github.com/zerbian/interactive-fpga">GitHub</a></li>
-			</ul>
-		</footer>
+		
 
 
 		<script>
